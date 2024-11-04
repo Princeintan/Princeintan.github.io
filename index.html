@@ -3,48 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prashant Sharma's Portfolio</title>
+    <title>My CV - Prashant Sharma</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
         <h1>Prashant Sharma</h1>
-        <p>Welcome to my personal portfolio website!</p>
+        <h2>Research Assistant</h2>
+        <p>Email: prashant19@iisertvm.ac.in</p>
+        <p>Git: github/Princeintan </p>
+        <a href="CV.pdf" id="downloadCV" class="download-button">Download CV</a>
     </header>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Hi, I'm Prashant Sharma, a Junior Research Fellow passionate about programming and electronics. I specialize in data analysis, circuit design, and interdisciplinary research. Welcome to my portfolio!</p>
-    </section>
+    <main>
+        <section class="cv-section">
+            <h3>Education</h3>
+            <ul>
+                <li>B.S.-M.S. in Mathematics and Physics, Indian Institute of Science Education and Research, Thiruvananthapuram (July 2024)</li>
+            </ul>
+        </section>
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>Project Title 1</h3>
-            <p>Description of the project, tools used, and your role in it.</p>
-        </div>
-        <div class="project">
-            <h3>Project Title 2</h3>
-            <p>Description of the project, tools used, and your role in it.</p>
-        </div>
-    </section>
+        <section class="cv-section">
+            <h3>Experience</h3>
+            <ul>
+                <li>Junior Research Fellow at SMART Lab, IISER TVM - Currently working on an instrumental setup with gas sensors.</li>
+                <li>Intern at IIT Delhi - Worked on the design of a triboelectric nanogenerator testing setup.</li>
+                <li>Intern at P3C Technology and Solutions - 3D designing and troubleshooting of a robotic coating machine.</li>
+            </ul>
+        </section>
 
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <form id="contact-form">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
+        <section class="cv-section">
+            <h3>Skills</h3>
+            <ul>
+                <li>Programming: C#, Python, JavaScript</li>
+                <li>Data Analysis: Machine Learning, AI</li>
+                <li>Electronics: Circuit Design, Fabrication</li>
+            </ul>
+        </section>
+
+        <section class="cv-section">
+            <h3>Projects</h3>
+            <ul>
+                <li>MIDI DJ Controller: Built from scratch.</li>
+                <li>Lock-in Amplifier: Web-based project using Red Pitaya FPGA.</li>
+                <li>Gas Sensor Classification: AI and ML approaches for gas identification.</li>
+            </ul>
+        </section>
+    </main>
 
     <script src="script.js"></script>
 </body>

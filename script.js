@@ -1,5 +1,3 @@
-document.getElementById("contact-form").addEventListener("submit", function(event) {
-    event.preventDefault();
-    alert("Thank you for reaching out! I'll get back to you soon.");
-    this.reset();
+document.getElementById('downloadCV').addEventListener('click', function() {
+    alert('Prashant\'s CV will start downloading shortly!');
 });
