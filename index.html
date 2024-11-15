@@ -1,56 +1,537 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My CV - Prashant Sharma</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1>Prashant Sharma</h1>
-        <h2>Research Assistant</h2>
-        <p>Email: prashant19@iisertvm.ac.in</p>
-        <p>Git: <a href="https://github.com/Princeintan" target="_blank">github/Princeintan</a></p>
-        <a href="cv.pdf" id="downloadCV" class="download-button">Download CV</a>
-    </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prashant Portfolio</title>
+    <link rel="stylesheet" href="assests/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+  </head>
 
-    <main>
-        <section class="cv-section">
-            <h3>Education</h3>
-            <ul>
-                <li>B.S.-M.S. in Mathematics and Physics, Indian Institute of Science Education and Research, Thiruvananthapuram (July 2024)</li>
-            </ul>
-        </section>
+  <body>
+    <div class="personal-info page">
+      <div class="circle"></div>
+      <div class="personal-info-text">
+        <h2 style="font-size: 2rem">
+          Hello I'm
+          <i
+            class="fa-solid fa-arrow-turn-down"
+            style="
+              color: #0a3c56;
+              position: absolute;
+              margin-top: 1.5rem;
+              margin-left: 1rem;
+            "></i
+          ><br />
+          <span style="font-size: 4rem">Prashant Sharma</span>
+        </h2>
+        <h2 style="font-size: 1rem; line-height: 1px">Current Position</h2>
+        <h2 style="font-size: 2rem">
+          Research Assistant at
+          <span style="color: #0a3c56">IIT Delhi</span>
+        </h2>
+        <p>ORCID: XXXX - XXXX - XXXX - XXXX</p>
+        <button><i class="fa-regular fa-circle-down"></i>Download CV</button>
+      </div>
+      <div class="img-container">
+        <img src="assests/images/profile.png" alt="Display Profile" />
+      </div>
+    </div>
+    
+        <!-- Projects Gallery section of the webpage -->
+        <div class="projects-gallery-container page">
+          <h1>PROJECTS <span style="color: #0a3c56">GALLERY</span></h1>
+    
+          <input type="radio" name="slider" id="item-1" checked="checked" />
+          <input type="radio" name="slider" id="item-2" />
+          <input type="radio" name="slider" id="item-3" />
+          <input type="radio" name="slider" id="item-4" />
+          <input type="radio" name="slider" id="item-5" />
+    
+          <div class="projects-container">
+            <label class="project" for="item-1" id="img-1">
+              <img src="assests/images/gallery1.jpg" alt="song" />
+              <div class="project-info">
+                <div class="project-about">
+                  <a href="blog1.html">
+                    <h2>MIDI DJ Controller</h2>
+                  </a>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit....</p>
+                </div>
+                <div class="project-location">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <p>IISER TVM</p>
+                </div>
+              </div>
+            </label>
+            <label class="project" for="item-2" id="img-2">
+              <img src="assests/images/gallery2.jpg" alt="song" />
+              <div class="project-info">
+                <div class="project-about">
+                  <a href="blog2.html">
+                    <h2>MIDI DJ Controller</h2>
+                  </a>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit....</p>
+                </div>
+                <div class="project-location">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <p>IISER TVM</p>
+                </div>
+              </div>
+            </label>
+            <label class="project" for="item-3" id="img-3">
+              <img src="assests/images/gallery3.jpg" alt="song" />
+              <div class="project-info">
+                <div class="project-about">
+                  <a href="blog3.html">
+                    <h2>MIDI DJ Controller</h2>
+                  </a>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit....</p>
+                </div>
+                <div class="project-location">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <p>IISER TVM</p>
+                </div>
+              </div>
+            </label>
+            <label class="project" for="item-4" id="img-4">
+              <img src="assests/images/gallery2.jpg" alt="song" />
+              <div class="project-info">
+                <div class="project-about">
+                  <a href="blog1.html">
+                    <h2>MIDI DJ Controller</h2>
+                  </a>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit....</p>
+                </div>
+                <div class="project-location">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <p>IISER TVM</p>
+                </div>
+              </div>
+            </label>
+            <label class="project" for="item-5" id="img-5">
+              <img src="assests/images/gallery3.jpg" alt="song" />
+              <div class="project-info">
+                <div class="project-about">
+                  <a href="blog1.html">
+                    <h2>MIDI DJ Controller</h2>
+                  </a>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit....</p>
+                </div>
+                <div class="project-location">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <p>IISER TVM</p>
+                </div>
+              </div>
+            </label>
+          </div>
+        </div>
+    
+    <!-- Content Section of the webpage -->
+    <div class="sections-container page">
+      <!-- Navbar section of the content page -->
+      <div class="navbar">
+        <ul>
+          <li class="active" data-section="Education">
+            <i class="fa-solid fa-school"></i>
+          </li>
+          <li class="" data-section="Experience">
+            <i class="fa-solid fa-briefcase"></i>
+          </li>
+          <li class="" data-section="Skills">
+            <i class="fa-solid fa-laptop-code"></i>
+          </li>
+          <li class="" data-section="Achievements">
+            <i class="fa-solid fa-trophy"></i>
+          </li>
+          <li class="" data-section="SelfMotivatedProjects">
+            <i class="fa-solid fa-folder-open"></i>
+          </li>
+        </ul>
+      </div>
 
-        <section class="cv-section">
-            <h3>Experience</h3>
-            <ul>
-                <li>Junior Research Fellow at SMART Lab, IISER TVM - Currently working on an instrumental setup with gas sensors.</li>
-                <li>Intern at IIT Delhi - Worked on the design of a triboelectric nanogenerator testing setup.</li>
-                <li>Intern at P3C Technology and Solutions - 3D designing and troubleshooting of a robotic coating machine.</li>
-            </ul>
-        </section>
+      <div class="sections">
+        <!-- Education section of the content page -->
+        <div class="educations active" tabindex="0">
+          <h1 class="section-heading">Education</h1>
+          <div class="education-container">
+            <!-- #1 Education -->
+            <div class="education">
+              <h2 class="education-heading">
+                BSMS (Mathematics Major and Physics Minor)
+              </h2>
+              <div class="education-year">
+                <i class="fa-solid fa-arrow-turn-up"></i>
+                <i class="fa-solid fa-calendar"></i>
+                <span>2019 - 2024</span>
+              </div>
+              <p class="education-para">
+                Indian Institute of Science Education and Research,<br />
+                Thiruvananthapuram, Kerala, India (BSMS is a research-oriented
+                Dual Degree program)
+              </p>
+            </div>
 
-        <section class="cv-section">
-            <h3>Skills</h3>
-            <ul>
-                <li>Programming: C#, Python, JavaScript</li>
-                <li>Data Analysis: Machine Learning, AI</li>
-                <li>Electronics: Circuit Design, Fabrication</li>
-            </ul>
-        </section>
+            <!-- #2 Education -->
+            <div class="education">
+              <h2 class="education-heading">
+                Central Board of Secondary Education, Higher Secondary School
+              </h2>
+              <div class="education-year">
+                <i class="fa-solid fa-arrow-turn-up"></i>
+                <i class="fa-solid fa-calendar"></i>
+                <span>2017 - 2019</span>
+              </div>
+              <p class="education-para">
+                Rajkiya Pratibha Vikas Vidyalaya, Vasant Kunj • New Delhi, India
+              </p>
+            </div>
 
-        <section class="cv-section">
-            <h3>Projects</h3>
-            <ul>
-                <li>MIDI DJ Controller: Built from scratch.</li>
-                <li>Lock-in Amplifier: Web-based project using Red Pitaya FPGA.</li>
-                <li>Gas Sensor Classification: AI and ML approaches for gas identification.</li>
-            </ul>
-        </section>
-    </main>
+            <!-- Add more educations -->
+          </div>
+        </div>
 
-    <script src="script.js"></script>
-</body>
+        <!-- Experience section of the content page -->
+        <div class="experiences" tabindex="0">
+          <h1 class="section-heading">Experience</h1>
+          <div class="experience-container">
+            <!-- #1 Experience -->
+            <div class="experience">
+              <h2 class="experience-heading">
+                “Instrumental Setup For 6 Channel Gas Sensor Array”
+              </h2>
+              <div class="experience-info">
+                <i class="fa-solid fa-arrow-turn-up"></i>
+                <i class="fa-solid fa-calendar"></i>
+                <span>Jul 2024 - Present</span>
+                <i class="fa-solid fa-location-dot"></i>
+                <span>SMART Lab IISER TVM</span>
+              </div>
+              <p class="experience-para">
+                Project under Dr. Vinayak B Kamble, Assistant Professor
+              </p>
+            </div>
+
+            <!-- #2 Experience -->
+            <div class="experience">
+              <h2 class="experience-heading">
+                “Classification of Gas-Sensor Array data using Machine Learning”
+              </h2>
+              <div class="experience-info">
+                <i class="fa-solid fa-arrow-turn-up"></i>
+                <i class="fa-solid fa-calendar"></i>
+                <span>Aug 2023 - Apr 2024</span>
+                <i class="fa-solid fa-location-dot"></i>
+                <span>School of Mathematics IISER TVM</span>
+              </div>
+              <p class="experience-para">
+                Major project under Dr. Dharmatti Sheetal, Assistant Professor
+              </p>
+            </div>
+
+            <!-- #3 Experience -->
+            <div class="experience">
+              <h2 class="experience-heading">
+                “Instrumentation Design and Computer Interfacing of Physical
+                Measurement System”
+              </h2>
+              <div class="experience-info">
+                <i class="fa-solid fa-arrow-turn-up"></i>
+                <i class="fa-solid fa-calendar"></i>
+                <span>Jan 2023 - May 2023</span>
+                <i class="fa-solid fa-location-dot"></i>
+                <span>SMART Lab IISER TVM</span>
+              </div>
+              <p class="experience-para">
+                Minor Project under Dr. Vinayak B Kamble, Assistant Professor
+              </p>
+            </div>
+
+            <!-- #3 Experience -->
+            <div class="experience">
+              <h2 class="experience-heading">“Web App: Sugar Coaster”</h2>
+              <div class="experience-info">
+                <i class="fa-solid fa-arrow-turn-up"></i>
+                <i class="fa-solid fa-calendar"></i>
+                <span>Feb 2024 - Mar 2024</span>
+                <i class="fa-solid fa-location-dot"></i>
+                <span>ICAR New Delhi</span>
+              </div>
+              <p class="experience-para">
+                Copyright Project under Dr. Veda Krishnan, Senior Scientist at
+                ICAR-IARI
+              </p>
+            </div>
+
+            <!-- #4 Experience -->
+            <div class="experience">
+              <h2 class="experience-heading">
+                “Finding Solution to Celestial Sphere problems using Spherical
+                Trigonometry”
+              </h2>
+              <div class="experience-info">
+                <i class="fa-solid fa-arrow-turn-up"></i>
+                <i class="fa-solid fa-calendar"></i>
+                <span>Jan 2023 - Aug 2023</span>
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Department of Physics IIT Roorkee</span>
+              </div>
+              <p class="experience-para">
+                Online Internship under Dr Anil Kumar Gourishetty, Professor
+              </p>
+            </div>
+
+            <!-- #5 Experience -->
+            <div class="experience">
+              <h2 class="experience-heading">
+                “In-house-built test setup for measuring the performance of
+                triboelectric nanogenerator”
+              </h2>
+              <div class="experience-info">
+                <i class="fa-solid fa-arrow-turn-up"></i>
+                <i class="fa-solid fa-calendar"></i>
+                <span>Jul 2022 - Aug 2022</span>
+                <i class="fa-solid fa-location-dot"></i>
+                <span
+                  >Material of Material Science and Engineering IIT Delhi</span
+                >
+              </div>
+              <p class="experience-para">
+                Summer Internship under Dr Ankur Goswami, Assistant Professor
+              </p>
+            </div>
+
+            <!-- #6 Experience -->
+            <div class="experience">
+              <h2 class="experience-heading">
+                “3D Design of Automated Robotic Coating Machine for Cars”
+              </h2>
+              <div class="experience-info">
+                <i class="fa-solid fa-arrow-turn-up"></i>
+                <i class="fa-solid fa-calendar"></i>
+                <span>Jul 2022 - Aug 2022</span>
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Gurugram, Haryana</span>
+              </div>
+              <p class="experience-para">
+                Industrial Internship at P3C Technology & Solutions Pvt Ltd.
+              </p>
+            </div>
+
+            <!-- Add more experiences -->
+          </div>
+        </div>
+
+        <!-- Skills section of the content page -->
+        <div class="skills" tabindex="0">
+          <h1 class="section-heading">Skills</h1>
+          <div class="skill-container">
+            <!-- #1 Skill -->
+            <div class="skill">
+              <h2 class="skill-heading">Programming Languages</h2>
+              <ul>
+                <li>C</li>
+                <li>C#</li>
+                <li>.Net</li>
+                <li>C++</li>
+                <li>Python(Panda, TensorFlow)</li>
+                <li>Dart</li>
+                <li>Flutter</li>
+                <li>SCIPI Commands</li>
+                <!-- Add more languages -->
+              </ul>
+            </div>
+
+            <!-- #2 Skill -->
+            <div class="skill">
+              <h2 class="skill-heading">Tools</h2>
+              <ul>
+                <li>Solid Works</li>
+                <li>KiCad</li>
+                <li>Proteus</li>
+                <li>Unity Engine</li>
+                <li>Android Studio</li>
+                <li>MATLAB</li>
+                <li>ANSYS MoRIA</li>
+                <li>Git</li>
+                <li>Docker</li>
+                <!-- Add more tools -->
+              </ul>
+            </div>
+
+            <!-- #3 Skill -->
+            <div class="skill">
+              <h2 class="skill-heading">Reflex</h2>
+              <ul>
+                <li>Instrumentation</li>
+                <li>3D Printing</li>
+                <li>UAV Pilot</li>
+                <li>DJ</li>
+                <!-- Add more reflexes -->
+              </ul>
+            </div>
+
+            <!-- Add more skills -->
+          </div>
+        </div>
+
+        <!-- Achievements section of the content page -->
+        <div class="achievements" tabindex="0">
+          <h1 class="section-heading">Achievements</h1>
+          <div class="achievement-container">
+            <!-- #1 Achievement -->
+            <div class="achievement">
+              <ul>
+                <li>
+                  A member of the organizing committee of Indo-German Workshop
+                  on Thermoelectric Devices for Emerging Applications
+                  (IG-WTEA)-IISER TVM India
+                </li>
+                <li>
+                  Online teaching to neighbourhood high school students during
+                  the COVID-19 pandemic
+                </li>
+                <li>Won the Physics Expo in 2019, organized by IISER TVM</li>
+                <li>Coordinator of Science and Cultural fests at IISER TVM</li>
+                <li>
+                  Won various prizes in debate, poem recitation, and narration
+                  at school and college levels.
+                </li>
+                <li>
+                  DJ at fest events of IISER TVM with my own DJ controller,
+                  students loved it
+                </li>
+              </ul>
+            </div>
+
+            <!-- #2 Achievement -->
+            <div class="achievement">
+              <h2 class="achievement-heading">Publications</h2>
+              <div class="achievement-year">
+                <i class="fa-solid fa-arrow-turn-up"></i>
+                <i class="fa-solid fa-calendar"></i>
+                <span>Mar 2024</span>
+              </div>
+              <p class="achievement-para">
+                Kumar, S., Jha, R. K., Sharma, P. K., & Goswami, A. Design and
+                development of a horizontal contact separated (HCS) test setup
+                for measuring the performance of triboelectric nanogenerator for
+                sustainable energy harvesting applications, Review of Scientific
+                Instruments
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Self Motivated Projects Section -->
+        <div class="self-motivated-projects" tabindex="0">
+          <h1 class="section-heading">Self Motivated Projects</h1>
+          <div class="education-container">
+            <!-- #1 Project -->
+            <div class="education">
+              <h2 class="education-heading">
+                “Android App: Social Media App for Campus”
+              </h2>
+              <div class="education-year">
+                <i class="fa-solid fa-arrow-turn-up"></i>
+                <i class="fa-solid fa-calendar"></i>
+                <span>Sep 2023 - Present</span>
+              </div>
+              <p class="education-para">
+                This app was approved by the council for operation on the IISER
+                TVM campus
+              </p>
+            </div>
+
+            <!-- #2 Project -->
+            <div class="education">
+              <h2 class="education-heading">“Android Game: Dino Running”</h2>
+              <div class="education-year">
+                <i class="fa-solid fa-arrow-turn-up"></i>
+                <i class="fa-solid fa-calendar"></i>
+                <span>Oct 2023 - Present</span>
+              </div>
+              <p class="education-para">
+                Click here to download, play and review
+              </p>
+            </div>
+
+            <!-- #3 Project -->
+            <div class="education">
+              <h2 class="education-heading">
+                “MIDI/DJ Controller with Arduino”
+              </h2>
+              <div class="education-year">
+                <i class="fa-solid fa-arrow-turn-up"></i>
+                <i class="fa-solid fa-calendar"></i>
+                <span>Oct 2023 - Feb 2023</span>
+              </div>
+              <p class="education-para">
+                Developed using an Arduino Nano for analog-to-digital conversion
+                and three 16- channel multiplexers for 32 analog and 16 digital
+                inputs
+              </p>
+            </div>
+
+            <!-- #4 Project -->
+            <div class="education">
+              <h2 class="education-heading">“DVI output with RP2040”</h2>
+              <div class="education-year">
+                <i class="fa-solid fa-arrow-turn-up"></i>
+                <i class="fa-solid fa-calendar"></i>
+                <span>Jul 2022 - Nov 2022</span>
+              </div>
+              <p class="education-para">
+                Implemented DVI output on a 32” LCD screen using a Raspberry Pi
+                Pico and a GitHub repository
+              </p>
+            </div>
+
+            <!-- #5 Project -->
+            <div class="education">
+              <h2 class="education-heading">
+                “AID-BOT: Homemade Autonomous UAV for Air-Dropping Medicines in
+                Remote Areas”
+              </h2>
+              <div class="education-year">
+                <i class="fa-solid fa-arrow-turn-up"></i>
+                <i class="fa-solid fa-calendar"></i>
+                <span>Aug 2020 - Nov 2021</span>
+              </div>
+              <p class="education-para">
+                Utilized an Arduino Nano as the flight controller and additional
+                Arduino units to construct the transmitter and receiver
+              </p>
+            </div>
+
+            <!-- Add more projects -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer section of the webpage -->
+    <footer>
+      <div class="footer-info">
+        <h2>Prashant Sharma</h2>
+        <p>Current Position</p>
+        <p>
+          Research Assistant at
+          <span style="color: #ffc25c">IIT Delhi</span>
+        </p>
+      </div>
+      <div class="footer-contact">
+        <i class="fa-solid fa-envelope"></i>
+        <i class="fa-solid fa-phone"></i>
+        <i class="fa-brands fa-github"></i>
+      </div>
+    </footer>
+
+    <script src="assests/js/script.js"></script>
+  </body>
 </html>

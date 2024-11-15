@@ -1,0 +1,416 @@
+@import url("https://fonts.googleapis.com/css2?family=Hubot+Sans:ital,wght@0,200..900;1,200..900&display=swap");
+
+* {
+  border: 0;
+  margin: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: "Hubot Sans", sans-serif;
+  /* outline: 1px solid #000; */
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  scroll-behavior: smooth;
+  color: #333333;
+  background-color: #f4f4f4;
+}
+
+.personal-info {
+  position: relative;
+  padding: 1rem;
+  overflow: hidden;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.personal-info .circle {
+  position: absolute;
+  background-color: #0a3c56;
+  height: 2000px;
+  width: 2000px;
+  right: -75%;
+  border-radius: 100%;
+}
+
+.img-container {
+  width: 700px;
+  height: 700px;
+  overflow: hidden;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  bottom: -30px;
+  right: 0;
+  z-index: 1;
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+}
+
+.personal-info-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: left;
+  margin-left: 1rem;
+}
+
+.personal-info .icons {
+  display: flex;
+  gap: 1rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 0.5rem;
+  background-color: #0a3c56;
+}
+
+.personal-info-text .icons i {
+  color: #fff;
+  font-size: 1.25rem;
+  padding: 1rem;
+}
+
+.personal-info-text h2 {
+  font-size: 3rem;
+}
+
+.personal-info-text button {
+  background-color: #007acc;
+  padding: 1rem 0;
+  border-radius: 0.5rem;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* Styling for content section of the webpage */
+.sections-container {
+  display: flex;
+}
+
+/* Styling for navbar of the content section of the webpage */
+.navbar ul {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  background-color: #0a3c56;
+  padding: 0;
+}
+
+.navbar ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  margin-left: 0;
+  padding: 0 1rem;
+  font-weight: 600;
+  color: #000;
+}
+
+.navbar ul li:hover,
+.navbar ul li.active {
+  background-color: rgba(167, 232, 247, 0.1254901961);
+}
+
+.navbar ul li i {
+  color: #ffc25c;
+  font-size: 2rem;
+}
+
+/* Styling for sections of the content page */
+.sections {
+  flex: 1;
+  width: 100%;
+  overflow: scroll;
+}
+
+.educations,
+.experiences,
+.skills,
+.achievements,
+.self-motivated-projects {
+  height: 100vh;
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+.section-heading {
+  margin: 3rem;
+  font-size: 4rem;
+}
+
+/* Individual styling for the education section of the content page */
+.education-container,
+.experience-container,
+.achievement-container {
+  margin-left: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.education-heading,
+.experience-heading,
+.skill-heading,
+.achievement-heading {
+  font-size: 2rem;
+}
+
+.education-year,
+.experience-info,
+.achievement-year {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  gap: 1rem;
+  margin-top: 0.25rem;
+  margin-left: 0.5rem;
+}
+
+.education-year i:nth-child(1),
+.experience-info i:nth-child(1),
+.achievement-year i:nth-child(1) {
+  transform: rotate(90deg);
+}
+
+.education-para,
+.experience-para,
+.achievement-para {
+  margin-top: 1rem;
+  line-height: 2rem;
+  font-size: 1.15rem;
+}
+
+/* Individual styling for the experience section of the content page */
+.experience-container{
+  gap: 2rem;
+}
+
+.experience:last-child{
+  margin-bottom: 10rem;
+}
+
+/* Individual styling for the skills section of the content page */
+.skill-container {
+  display: flex;
+  margin-left: 4rem;
+  gap: 5rem;
+}
+
+.skill {
+  flex: 1;
+}
+
+.skill ul{
+  margin-top: 2rem;
+}
+
+.skill ul li,
+.achievement ul li{
+  line-height: 3rem;
+  font-size: 1.15rem;
+}
+
+/* Styling for Projects Gallery section of the webpage */
+.projects-gallery-container {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.projects-gallery-container h1 {
+  color: #333333;
+  grid-row: 1;
+  justify-self: center;
+  font-size: 3rem;
+  font-weight: 800;
+  margin-top: 2rem;
+}
+
+input[type=radio] {
+  display: none;
+}
+
+.projects-container {
+  width: 100%;
+  grid-row: 2;
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project {
+  overflow: hidden;
+  position: absolute;
+  width: 900px;
+  height: 506px;
+  transform: translateX(80);
+  background-color: dimgray;
+  margin: 1rem;
+  border: 4px solid #e5e5e5;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: transform 0.5s ease, opacity 0.5s ease, scale 0.25s ease;
+}
+
+.project img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.project-info {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0s 0.3s;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  position: absolute;
+  color: #fff;
+  bottom: 0;
+  background: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0));
+}
+
+.project-about a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.project-location {
+  display: flex;
+  text-align: right;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.project:hover {
+  scale: 1.005;
+}
+
+.project:hover .project-info {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease, visibility 0s 0s;
+}
+
+/* Carousel Logic using Radio Buttons */
+#item-1:checked ~ .projects-container #img-1,
+#item-2:checked ~ .projects-container #img-2,
+#item-3:checked ~ .projects-container #img-3,
+#item-4:checked ~ .projects-container #img-4,
+#item-5:checked ~ .projects-container #img-5 {
+  z-index: 1;
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+/* Previous Image */
+#item-1:checked ~ .projects-container #img-5,
+#item-2:checked ~ .projects-container #img-1,
+#item-3:checked ~ .projects-container #img-2,
+#item-4:checked ~ .projects-container #img-3,
+#item-5:checked ~ .projects-container #img-4 {
+  z-index: 0;
+  transform: translateX(-40%) scale(0.8);
+}
+
+/* Next Image */
+#item-1:checked ~ .projects-container #img-2,
+#item-2:checked ~ .projects-container #img-3,
+#item-3:checked ~ .projects-container #img-4,
+#item-4:checked ~ .projects-container #img-5,
+#item-5:checked ~ .projects-container #img-1 {
+  z-index: 0;
+  transform: translateX(40%) scale(0.8);
+}
+
+/* Second Previous Image */
+#item-1:checked ~ .projects-container #img-4,
+#item-2:checked ~ .projects-container #img-5,
+#item-3:checked ~ .projects-container #img-1,
+#item-4:checked ~ .projects-container #img-2,
+#item-5:checked ~ .projects-container #img-3 {
+  z-index: -1;
+  transform: translateX(-80%) scale(0.6);
+}
+
+/* Second Next Image */
+#item-1:checked ~ .projects-container #img-3,
+#item-2:checked ~ .projects-container #img-4,
+#item-3:checked ~ .projects-container #img-5,
+#item-4:checked ~ .projects-container #img-1,
+#item-5:checked ~ .projects-container #img-2 {
+  z-index: -1;
+  transform: translateX(80%) scale(0.6);
+}
+
+/* Styling for footer section of the webpage */
+footer {
+  background-color: #0a3c56;
+  color: #ffffff;
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-info {
+  text-align: left;
+}
+
+.footer-info h2 {
+  font-size: 3rem;
+}
+
+.footer-info p:nth-child(2) {
+  font-size: 0.75rem;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-contact i {
+  font-size: 1.25rem;
+  color: #ffc25c;
+  cursor: pointer;
+}

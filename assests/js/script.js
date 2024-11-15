@@ -1,10 +1,11 @@
 const navBtns = document.querySelectorAll("li");
 
 const allSections = {
-  Education: document.querySelector(".education"),
-  Experience: document.querySelector(".experience"),
+  Education: document.querySelector(".educations"),
+  Experience: document.querySelector(".experiences"),
   Skills: document.querySelector(".skills"),
   Achievements: document.querySelector(".achievements"),
+  SelfMotivatedProjects: document.querySelector(".self-motivated-projects"),
 };
 
 function activeSection(btn) {

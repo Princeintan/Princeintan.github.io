@@ -6,12 +6,24 @@ body {
 }
 
 header {
-    text-align: center;
+    display: flex;
+    align-items: center;
     background: #4CAF50;
     color: white;
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 20px;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    width: 100px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
+    margin-right: 20px;
+}
+
+.header-info {
+    flex: 1;
 }
 
 h1 {
@@ -36,9 +48,39 @@ h2 {
     background-color: #d4d4d4;
 }
 
+.container {
+    display: flex;
+}
+
+.sidebar {
+    width: 200px;
+    margin-right: 20px;
+}
+
+.sidebar h3 {
+    margin-bottom: 10px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 5px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #4CAF50;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+}
+
 main {
-    max-width: 800px;
-    margin: auto;
+    flex: 1;
 }
 
 .cv-section {
