@@ -1,2 +1,2 @@
-# prashant_project
-A portfolio website for my friend
+# Prashant ki Website
+A portfolio website for prashant
