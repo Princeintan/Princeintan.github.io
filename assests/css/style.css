@@ -147,7 +147,6 @@ body {
 
   .personal-info{
     flex-direction: column-reverse;
-    gap: 1rem;
     height: 100vh;
   }
 }
