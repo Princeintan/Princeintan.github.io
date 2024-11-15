@@ -104,6 +104,11 @@ body {
   align-items: center;
 }
 
+.personal-info-text p a{
+  text-decoration: none;
+  color: #333333;
+}
+
 /* Styling for content section of the webpage */
 .sections-container {
   display: flex;
