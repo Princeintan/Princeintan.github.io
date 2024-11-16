@@ -430,12 +430,12 @@ body {
 }
 
 .skill ul{
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .skill ul li,
 .achievement ul li{
-  line-height: 3rem;
+  line-height: 2rem;
   font-size: 1.15rem;
 }
 
