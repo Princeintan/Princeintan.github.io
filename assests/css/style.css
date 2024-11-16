@@ -420,8 +420,8 @@ body {
 
 /* Individual styling for the skills section of the content page */
 .skill-container {
-  display: flex;
   margin-left: 4rem;
+  display: flex;
   gap: 5rem;
 }
 
@@ -472,7 +472,9 @@ body {
 
   .education-container,
   .experience-container,
-  .achievement-container {
+  .achievement-container,
+  .skill-container {
+    flex-direction: column;
     margin-left: 0;
     padding: 1rem;
     gap: 2rem;
@@ -495,7 +497,7 @@ footer {
 }
 
 .footer-info h2 {
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 .footer-info p:nth-child(2) {
