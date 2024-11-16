@@ -382,7 +382,6 @@ body {
 }
 
 .education-year i:nth-child(1),
-.experience-info i:nth-child(1),
 .achievement-year i:nth-child(1) {
   transform: rotate(90deg);
 }
@@ -395,6 +394,50 @@ body {
   font-size: 1.15rem;
 }
 
+.fa-arrow-turn-up{
+  transform: rotate(90deg);
+}
+
+
+/* Individual styling for the experience section of the content page */
+.experience-container{
+  gap: 2rem;
+}
+
+.experience-subinfo{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.fa-calendar,
+.fa-location-dot{
+  margin-right: 0.5rem;
+}
+
+
+
+/* Individual styling for the skills section of the content page */
+.skill-container {
+  display: flex;
+  margin-left: 4rem;
+  gap: 5rem;
+}
+
+.skill {
+  flex: 1;
+}
+
+.skill ul{
+  margin-top: 2rem;
+}
+
+.skill ul li,
+.achievement ul li{
+  line-height: 3rem;
+  font-size: 1.15rem;
+}
 
 @media (max-width: 768px){
   .sections-container{
@@ -434,36 +477,6 @@ body {
     padding: 1rem;
     gap: 2rem;
   }
-}
-
-/* Individual styling for the experience section of the content page */
-.experience-container{
-  gap: 2rem;
-}
-
-.experience:last-child{
-  margin-bottom: 10rem;
-}
-
-/* Individual styling for the skills section of the content page */
-.skill-container {
-  display: flex;
-  margin-left: 4rem;
-  gap: 5rem;
-}
-
-.skill {
-  flex: 1;
-}
-
-.skill ul{
-  margin-top: 2rem;
-}
-
-.skill ul li,
-.achievement ul li{
-  line-height: 3rem;
-  font-size: 1.15rem;
 }
 
 /* Styling for footer section of the webpage */
