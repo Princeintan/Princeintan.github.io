@@ -117,14 +117,14 @@ body {
 }
 
 
-@media (max-width: 862px) {
+@media (max-width: 1138px) {
   .personal-info__text-section,
   .personal-info__image-section{
     width: 100vw;
   }
 
   .personal-info__text-section{
-    height: fit-content;
+    height: 60vh;
   }
 
   .personal-info__image-section{
@@ -136,7 +136,7 @@ body {
   }
 
   .image-section__image{
-    width: 48vh;
+    width: 40vh;
     position: absolute;
     bottom: -10px;
     left: 50%;
@@ -146,18 +146,6 @@ body {
   .personal-info{
     flex-direction: column-reverse;
     height: 100vh;
-  }
-}
-
-@media (max-width: 542px){
-  .image-section__image{
-    width: 42vh;
-  }
-}
-
-@media (max-width: 348px){
-  .image-section__image{
-    width: 35vh;
   }
 }
 
