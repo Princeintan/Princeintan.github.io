@@ -439,6 +439,10 @@ body {
   font-size: 1.15rem;
 }
 
+.achievement ul li{
+  line-height: 2rem;
+}
+
 @media (max-width: 768px){
   .sections-container{
     flex-direction: column;
