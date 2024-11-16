@@ -42,13 +42,21 @@ function scrollProjects(direction) {
     direction === "left" ? -projectHeight : projectHeight;
 
   if (window.innerWidth > 1138) {
-    projectsWrapper.scrollBy({
-      left: scrollAmountWidth,
+    // For horizontal scroll
+    const currentScrollLeft = projectsWrapper.scrollLeft;
+    const newScrollLeft = currentScrollLeft + scrollAmountWidth;
+
+    projectsWrapper.scrollTo({
+      left: newScrollLeft,
       behavior: "smooth",
     });
   } else {
-    projectsWrapper.scrollBy({
-      top: scrollAmountHeight,
+    // For vertical scroll
+    const currentScrollTop = projectsWrapper.scrollTop;
+    const newScrollTop = currentScrollTop + scrollAmountHeight;
+
+    projectsWrapper.scrollTo({
+      top: newScrollTop,
       behavior: "smooth",
     });
   }
