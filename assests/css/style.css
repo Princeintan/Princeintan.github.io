@@ -401,6 +401,12 @@ body {
     flex-direction: column;
   }
 
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+
   .navbar ul{
     flex-direction: initial;
   }
