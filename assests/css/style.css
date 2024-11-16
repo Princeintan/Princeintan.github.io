@@ -6,7 +6,7 @@
   outline: none;
   box-sizing: border-box;
   font-family: "Hubot Sans", sans-serif;
-  outline: 1px solid #000;
+  /* outline: 1px solid #000; */
 }
 
 ::-webkit-scrollbar {
@@ -351,32 +351,6 @@ body {
   padding-left: 2rem;
 }
 
-@media (max-width: 768px){
-  .sections-container{
-    flex-direction: column;
-  }
-
-  .navbar ul{
-    flex-direction: initial;
-  }
-
-  .navbar ul li{
-    padding: 1rem 0;
-  }
-
-  .navbar ul li i {
-    color: #ffc25c;
-    font-size: 1.75rem;
-  }
-
-  .section-heading{
-    height: auto;
-    font-size: 2.5rem;
-    justify-content: center;
-    padding: 0;
-  }
-}
-
 /* Individual styling for the education section of the content page */
 .education-container,
 .experience-container,
@@ -419,6 +393,41 @@ body {
   margin-top: 1rem;
   line-height: 2rem;
   font-size: 1.15rem;
+}
+
+
+@media (max-width: 768px){
+  .sections-container{
+    flex-direction: column;
+  }
+
+  .navbar ul{
+    flex-direction: initial;
+  }
+
+  .navbar ul li{
+    padding: 1rem 0;
+  }
+
+  .navbar ul li i {
+    color: #ffc25c;
+    font-size: 1.75rem;
+  }
+
+  .section-heading{
+    height: auto;
+    font-size: 2.5rem;
+    justify-content: center;
+    padding: 1rem 0;
+  }
+
+  .education-container,
+  .experience-container,
+  .achievement-container {
+    margin-left: 0;
+    padding: 1rem;
+    gap: 2rem;
+  }
 }
 
 /* Individual styling for the experience section of the content page */
