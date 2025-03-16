@@ -9,4 +9,5 @@ export default defineConfig({
   //   plugins: [tailwindcss()],
   // },
   site: 'https://princeintan.github.io',
+  base: '/',
 });
