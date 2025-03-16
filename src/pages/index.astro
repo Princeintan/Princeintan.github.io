@@ -3,6 +3,8 @@ import MainLayout from "../layouts/MainLayout.astro";
 import projectsData from "../data/projects.json";
 import { getImage } from "astro:assets";
 
+import PublicationSection from "./publication.astro";
+
 // Import the profile image statically
 import profileImage from "../../public/images/profile.jpg";
 
@@ -16,8 +18,8 @@ function getImagePath(imagePath: string) {
 }
 
 // Get featured projects (limit to 3)
-const OnGoingProjects = projectsData.projects.slice(0, 2);
-const featuredProjects = projectsData.projects.slice(2, 5);
+const OnGoingProjects = projectsData.projects.slice(0, 1);
+const featuredProjects = projectsData.projects.slice(1, 4);
 ---
 
 <MainLayout title="Prashant Sharma - Portfolio">
@@ -84,9 +86,9 @@ const featuredProjects = projectsData.projects.slice(2, 5);
     </div>
   </section>
 
-  <section class="py-12">
+  <section class="py-2">
     <div class="mb-8 flex justify-between items-center">
-      <h2 class="text-3xl font-bold">Ongoing Projects</h2>
+      <h2 class="text-3xl font-bold">Current Projects</h2>
       <a
         href="/projects"
         class="text-accent hover:text-accent/80 font-medium flex items-center gap-1"
@@ -140,6 +142,10 @@ const featuredProjects = projectsData.projects.slice(2, 5);
         ))
       }
     </div>
+  </section>
+
+  <section class="py-1">
+    <PublicationSection />
   </section>
 
   <section class="py-12">

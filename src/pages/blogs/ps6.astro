@@ -1,0 +1,164 @@
+---
+import BlogLayout from "../../layouts/BlogLayout.astro";
+import BlogImage from "../../components/BlogImage.astro";
+import SectionHeading from "../../components/SectionHeading.astro";
+
+// Function to get the correct image path
+function getImagePath(imagePath: string) {
+  // Remove "/public" from the path if it exists
+  const cleanPath = imagePath.replace("/public", "").replace("./public", "");
+
+  // Ensure the path starts with a slash
+  return cleanPath.startsWith("/") ? cleanPath : `/${cleanPath}`;
+}
+
+// Define your sections for the navigation with icons
+const sections = [
+  { id: "hardware-design", title: "Hardware Design", icon: "microchip" },
+  {
+    id: "technical-implementation",
+    title: "Technical Implementation",
+    icon: "code",
+  },
+  { id: "case-design", title: "Case Design", icon: "cube" },
+  {
+    id: "performance-testing",
+    title: "Performance Testing",
+    icon: "tachometer-alt",
+  },
+  {
+    id: "real-world-application",
+    title: "Real-World Application",
+    icon: "music",
+  },
+];
+---
+
+<BlogLayout
+  title="PS6: Power Supply with Six channel Digital Control for Gas sensing"
+  date="May 24 - Oct 24"
+  description="Designed and implemented a Custom Power software to heat and read Six IDE(s) at the same time via serial communication with an Arduino Mega, with precise temperature regulation through PWM duty cycle adjustments."
+  ,
+  mainImage={{
+    src: getImagePath("/public/images/PS6new.PNG"),
+    alt: "Custom Power Supply and software for Gas Sensing Applications",
+    caption: "The completed custom PS6 in action",
+  }}
+  sections={sections}
+  accentColor="#6366f1"
+>
+  <p>
+    This project involved designing and building a fully functional gas sensing
+    setup from scratch using an Arduino Mega as the brain and a custom Power
+    electronics circuit. The controller was specifically designed to provide
+    different different voltage at different channels of the sensor. the sensors
+    were integrated through the IDEs and the data was read through the LAN
+    connection. the power supply was controlled through the software over serial
+    connection.
+  </p>
+
+  <SectionHeading
+    title="Hardware Design"
+    id="hardware-design"
+    icon="microchip"
+  />
+  <p>The controller features an extensive input array that includes:</p>
+  <ul>
+    <li>6 channel output</li>
+    <li>Voltage range from 0.9V to 16V each channel</li>
+    <li>
+      Short Ciruit failsafe. with limiting current feature on each channel
+    </li>
+    <li>digital and manual control</li>
+    <li>LCD Display with multiple mode</li>
+    <li>Fully automated control with software</li>
+  </ul>
+
+  <BlogImage
+    src={getImagePath("/public/images/internals.jpg")}
+    alt="Internal wiring and components of the MIDI controller"
+    caption="The internal wiring and component layout of the controller"
+    align="wide"
+  />
+
+  <SectionHeading
+    title="Technical Implementation"
+    id="technical-implementation"
+    icon="code"
+  />
+  <p>
+    To handle the large number of inputs with the limited I/O pins available on
+    the Arduino Nano, I implemented:
+  </p>
+  <ul>
+    <li>Efficient interrupt-based polling system for responsive controls</li>
+    <li>
+      Virtual serial port to MIDI converter for communication with the host
+      computer
+    </li>
+  </ul>
+
+  <SectionHeading title="Case Design" id="case-design" icon="cube" />
+  <p>
+    The controller's case was designed using 3D modeling software and 3D printed
+    in multiple parts for easy assembly and maintenance. The case design
+    features:
+  </p>
+  <ul>
+    <li>Integrated cable management for a clean setup</li>
+    <li>Modular design for easy access to internal components</li>
+    <li>Customizable faceplate for different control layouts</li>
+  </ul>
+
+  <SectionHeading
+    title="Performance testing"
+    id="performance-testing"
+    icon="tachometer-alt"
+  />
+  <p>
+    The controller underwent extensive performance testing to ensure reliable
+    operation in live DJ environments. The testing included:dusty environments,
+    a long period of continuous use, and exposure to high humidity levels.
+    Disassembly and reassembly for maintenance and repairs were also tested.
+  </p>
+
+  <SectionHeading
+    id="real-world-application"
+    title="Real-World Application"
+    icon="music"
+  />
+  <p>
+    The controller has been used in multiple live DJ performances and has
+    received positive feedback from professional DJs. The customizable layout
+    and responsive controls have made it a valuable tool for live mixing and
+    performance.
+  </p>
+
+  <!-- blog foot -->
+  <div class="mt-8 flex flex-wrap gap-4">
+    <a
+      href="/projects"
+      class="bg-accent hover:bg-accent/90 text-white px-6 py-3 rounded-md transition-colors font-medium"
+    >
+      View Other Projects
+    </a>
+    <a
+      href="/contact"
+      class="bg-gray-100 hover:bg-gray-200 text-gray-800 px-6 py-3 rounded-md transition-colors font-medium"
+    >
+      Contact Me
+    </a>
+  </div>
+</BlogLayout>
+
+<script>
+  // This script will run on the client side to preload images
+  document.addEventListener("DOMContentLoaded", () => {
+    const images = document.querySelectorAll("img");
+    images.forEach((img) => {
+      // Create a new Image object to preload
+      const preloadImg = new Image();
+      preloadImg.src = img.src;
+    });
+  });
+</script>

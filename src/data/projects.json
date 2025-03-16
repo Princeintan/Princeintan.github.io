@@ -1,22 +1,23 @@
 {
   "projects": [
     {
-      "title": "Android App: Social Media App for Campus",
-      "description": "A social media platform for students to post pictures, ask questions, sell items, and access information like the mess menu and other campus services.",
-      "technology": ["Dart", "Flutter", "Google AdSense"],
-      "date": "Sep 2023 - Present",
-      "link": "/blogs/social-media-app",
-      "image": "/images/heyiiser.png",
-      "organization": "IISER TVM"
+      "title": "Electrospinner for Nanofiber Production",
+      "description": "Developing a low-cost automatic electrospinning setup for the production of nanofibers. The setup will be used to produce nanofibers from a variety of polymers.",
+      "technology": ["Microcontroller", "High Voltage", "3d Design", "Laser cutting"],
+      "date": "Nov 2023 - Present",
+      "link": "/blogs/electrospinner",
+      "image": "/images/Electrospinner.jpg",
+      "organization": "IIT Delhi"
     },
+    
     {
-      "title": "Android Game: Dino Running",
-      "description": "A mobile game developed using Dart and Flutter with integrated Google AdSense for advertisements.",
-      "technology": ["Dart", "Flutter", "Google AdSense"],
-      "date": "Oct 2023 - Present",
-      "link": "/blogs/dino-running",
-      "image": "/images/dinorun.png",
-      "organization": "Personal Project"
+      "title": "PS6: Power Supply with Six channel Digital Control for Gas sensing",
+      "description": "Designed and implemented a Custom Power software to heat and read Six IDE(s) at the same time via serial communication with an Arduino Mega, with precise temperature regulation through PWM duty cycle adjustments.",
+      "technology": ["Arduino", "Serial Communication", "PCB Design", "Keithley 6510", "PWM", "LCD"],
+      "date": "May 24 - Oct 24",
+      "link": "/blogs/ps6",
+      "image": "/images/PS6new.PNG",
+      "organization": "IISER TVM"
     },
     {
       "title": "MIDI/DJ Controller with Arduino",
@@ -24,8 +25,45 @@
       "technology": ["Arduino", "Hardware Design", "MIDI", "VirtualDJ"],
       "date": "Oct 2022 - Feb 2023",
       "link": "/blogs/midi",
-      "image": "/images/midi_dj.jpg",
+      "image": "/images/midiThumbnail.PNG",
       "organization": "Personal Project"
+    },
+    {
+      "title" :"Major Project: ML for Gas Sensing",
+      "description": "Data analysis and machine learning for gas sensing using Python. Developed a Python library from scratch for dimensionality reduction using Principal Component Analysis (PCA). Applied K-Nearest Neighbors (KNN), Decision Tree, and Neural Networks as classifiers to analyze gas sensor data and identify various gases.",
+      "technology": ["Python", "Machine Learning", "PCA", "KNN", "Decision Trees", "Neural Networks"],
+      "date": "july 2023 - Apr 2024",
+      "link": "/blogs/social-media-app",
+      "image": "/images/majorproject.PNG",  
+      "organization": "IISER TVM"
+    },
+    {
+      "title": "Android Game: Dino Running",
+      "description": "A mobile game developed using Dart and Flutter with integrated Google AdSense for advertisements.",
+      "technology": ["Dart", "Flutter", "Google AdSense"],
+      "date": "Oct 2023 - Dec 2023",
+      "link": "/blogs/dino-running",
+      "image": "/images/dinorun.png",
+      "organization": "Personal Project"
+    },
+    {
+      "title": "Android App: Social Media App for Campus",
+      "description": "A social media platform for students to post pictures, ask questions, sell items, and access information like the mess menu and other campus services.",
+      "technology": ["Dart", "Flutter", "Google AdSense"],
+      "date": "Sep 2023 - Aug 2024",
+      "link": "/blogs/social-media-app",
+      "image": "/images/heyiiser.png",
+      "organization": "IISER TVM"
+    },
+    
+    {
+      "title": "Minor Project: Web version of Lock-In Amplifier",
+      "description": "Developed a web-based version of a Lock-In Amplifier using a Red Pitaya (FPGA) board. Designed",
+      "technology": ["FPGA", "Red Pitaya", "Arduino", "Circuit Design", "Lock-In Amplifier"],
+      "date": "Jan 2023 - May 2023",
+      "link": "/blogs/lock-in-amplifier",
+      "image": "/images/lockin.png",
+      "organization": "IISER TVM"
     },
     {
       "title": "DVI output with RP2040",
