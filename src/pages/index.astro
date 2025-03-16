@@ -102,7 +102,7 @@ const featuredProjects = projectsData.projects.slice(2, 5);
           <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg">
             <div class="relative">
               <img
-                src={project.image}
+                src={import.meta.env.BASE_URL + project.image}
                 alt={project.title}
                 class="w-full h-48 object-cover"
                 onerror="this.onerror=null; this.src='/images/placeholder.jpg';"
