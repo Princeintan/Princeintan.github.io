@@ -1,12 +1,22 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import projectsData from "../data/projects.json";
+import { getImage } from "astro:assets";
 
+// Import the profile image statically
 import profileImage from "../../public/images/profile.jpg";
+
+// Function to get the correct image path
+function getImagePath(imagePath: string) {
+  // Remove "/public" from the path if it exists
+  const cleanPath = imagePath.replace("/public", "").replace("./public", "");
+
+  // Ensure the path starts with a slash
+  return cleanPath.startsWith("/") ? cleanPath : `/${cleanPath}`;
+}
 
 // Get featured projects (limit to 3)
 const OnGoingProjects = projectsData.projects.slice(0, 2);
-
 const featuredProjects = projectsData.projects.slice(2, 5);
 ---
 
@@ -101,8 +111,9 @@ const featuredProjects = projectsData.projects.slice(2, 5);
         OnGoingProjects.map((project) => (
           <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg">
             <div class="relative">
+              {/* Dynamic image import */}
               <img
-                src={import.meta.env.BASE_URL + project.image}
+                src={getImagePath(project.image)}
                 alt={project.title}
                 class="w-full h-48 object-cover"
                 onerror="this.onerror=null; this.src='/images/placeholder.jpg';"
@@ -158,8 +169,9 @@ const featuredProjects = projectsData.projects.slice(2, 5);
         featuredProjects.map((project) => (
           <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg">
             <div class="relative">
+              {/* Dynamic image import */}
               <img
-                src={import.meta.env.BASE_URL + project.image}
+                src={getImagePath(project.image)}
                 alt={project.title}
                 class="w-full h-48 object-cover"
                 onerror="this.onerror=null; this.src='/images/placeholder.jpg';"
@@ -193,13 +205,6 @@ const featuredProjects = projectsData.projects.slice(2, 5);
   >
     <div class="max-w-5xl mx-auto text-center mb-12">
       <h2 class="text-3xl font-bold mb-4">About Me</h2>
-      <!-- <p class="text-lg text-gray-700">
-        I graduated with a BSMS degree in Mathematics with a minor in Physics
-        from the Indian Institute of Science Education and Research (IISER),
-        Thiruvananthapuram. Currently, I'm working as a Research Assistant at
-        IIT Delhi, focusing on instrumentation setup for testing Triboelectric
-        Nanogenerator Devices in Vacuum.
-      </p> -->
       <p class="text-lg text-gray-700 mt-4 text-left">
         I combine my background in mathematics with hands-on skills in
         programming, electronics, and instrumentation to create innovative
@@ -208,3 +213,15 @@ const featuredProjects = projectsData.projects.slice(2, 5);
     </div>
   </section>
 </MainLayout>
+
+<script>
+  // This script will run on the client side to preload images
+  document.addEventListener("DOMContentLoaded", () => {
+    const images = document.querySelectorAll("img");
+    images.forEach((img) => {
+      // Create a new Image object to preload
+      const preloadImg = new Image();
+      preloadImg.src = img.src;
+    });
+  });
+</script>
