@@ -8,4 +8,6 @@ export default defineConfig({
   //   plugins: [tailwindcss()],
   // },
  site: 'https://prashantmaths.com',
+ base: "/", 
+  output: "static",
 });
