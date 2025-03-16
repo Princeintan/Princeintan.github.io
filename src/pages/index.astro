@@ -53,7 +53,7 @@ const featuredProjects = projectsData.projects.slice(2, 5);
           class="relative w-full h-72 md:h-96 bg-gray-200 rounded-lg overflow-hidden"
         >
           <img
-            src="/public/images/profile.jpg"
+            src={import.meta.env.BASE_URL + "/public/images/profile.jpg"}
             alt="Prashant Sharma"
             class="w-full h-full object-cover"
             onerror="this.onerror=null; this.src='/images/placeholder.jpg';"
