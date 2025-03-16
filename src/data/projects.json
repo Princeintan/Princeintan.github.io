@@ -24,7 +24,7 @@
         "technology": ["Arduino", "Hardware Design", "MIDI", "VirtualDJ"],
         "date": "Oct 2022 - Feb 2023",
         "link": "/blogs/midi",
-        "image": "/public/images/midi_dj.jpg",
+        "image": "./public/images/midi_dj.jpg",
         "organization": "Personal Project"
       },
       {
