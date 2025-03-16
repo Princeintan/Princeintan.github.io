@@ -33,7 +33,7 @@
       "description": "Data analysis and machine learning for gas sensing using Python. Developed a Python library from scratch for dimensionality reduction using Principal Component Analysis (PCA). Applied K-Nearest Neighbors (KNN), Decision Tree, and Neural Networks as classifiers to analyze gas sensor data and identify various gases.",
       "technology": ["Python", "Machine Learning", "PCA", "KNN", "Decision Trees", "Neural Networks"],
       "date": "july 2023 - Apr 2024",
-      "link": "/blogs/social-media-app",
+      "link": "/blogs/majorproject",
       "image": "/images/majorproject.PNG",  
       "organization": "IISER TVM"
     },

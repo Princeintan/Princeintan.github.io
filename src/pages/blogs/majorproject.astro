@@ -1,0 +1,131 @@
+---
+import BlogLayout from "../../layouts/BlogLayout.astro";
+import BlogImage from "../../components/BlogImage.astro";
+import SectionHeading from "../../components/SectionHeading.astro";
+
+// Function to get the correct image path
+function getImagePath(imagePath: string) {
+  // Remove "/public" from the path if it exists
+  const cleanPath = imagePath.replace("/public", "").replace("./public", "");
+
+  // Ensure the path starts with a slash
+  return cleanPath.startsWith("/") ? cleanPath : `/${cleanPath}`;
+}
+
+// Define your sections for the navigation with icons
+const sections = [
+  { id: "hardware-design", title: "Hardware Design", icon: "microchip" },
+  {
+    id: "technical-implementation",
+    title: "Technical Implementation",
+    icon: "code",
+  },
+  { id: "case-design", title: "Case Design", icon: "cube" },
+  {
+    id: "performance-testing",
+    title: "Performance Testing",
+    icon: "tachometer-alt",
+  },
+  {
+    id: "real-world-application",
+    title: "Real-World Application",
+    icon: "music",
+  },
+];
+---
+
+<BlogLayout
+  title="ML for Gas Sensing"
+  date="july 2023 - Apr 2024"
+  description="Data analysis and machine learning for gas sensing using Python. Developed a Python library from scratch for dimensionality reduction using Principal Component Analysis (PCA). Applied K-Nearest Neighbors (KNN), Decision Tree, and Neural Networks as classifiers to analyze gas sensor data and identify various gases."
+  ,
+  mainImage={{
+    src: getImagePath("/public/images/majorproject.PNG"),
+    alt: "ML Mathematics",
+    caption: "The completed mathematics behind the ML model",
+  }}
+  sections={sections}
+  accentColor="#6366f1"
+>
+  <p>This project involved designing and building a ...</p>
+
+  <SectionHeading
+    title="Hardware Design"
+    id="hardware-design"
+    icon="microchip"
+  />
+  <p>The controller ...</p>
+  <ul>
+    <li>...</li>
+    <li>..</li>
+    <li>..</li>
+  </ul>
+
+  <BlogImage
+    src={getImagePath("/public/images/midi_controller_internals.jpg")}
+    alt="Internal wiring and components of the MIDI controller"
+    caption="The internal wiring and component layout of the controller"
+    align="wide"
+  />
+
+  <SectionHeading
+    title="Technical Implementation"
+    id="technical-implementation"
+    icon="code"
+  />
+  <p>gas sensor data....</p>
+  <ul>
+    <li>calssification</li>
+    <li>...</li>
+  </ul>
+
+  <SectionHeading title="Case Design" id="case-design" icon="cube" />
+  <p>features:</p>
+  <ul>
+    <li>PCA</li>
+    <li>KNN</li>
+    <li>NN</li>
+  </ul>
+
+  <SectionHeading
+    title="Performance testing"
+    id="performance-testing"
+    icon="tachometer-alt"
+  />
+  <p>......</p>
+
+  <SectionHeading
+    id="real-world-application"
+    title="Real-World Application"
+    icon="music"
+  />
+  <p>.....</p>
+
+  <!-- blog foot -->
+  <div class="mt-8 flex flex-wrap gap-4">
+    <a
+      href="/projects"
+      class="bg-accent hover:bg-accent/90 text-white px-6 py-3 rounded-md transition-colors font-medium"
+    >
+      View Other Projects
+    </a>
+    <a
+      href="/contact"
+      class="bg-gray-100 hover:bg-gray-200 text-gray-800 px-6 py-3 rounded-md transition-colors font-medium"
+    >
+      Contact Me
+    </a>
+  </div>
+</BlogLayout>
+
+<script>
+  // This script will run on the client side to preload images
+  document.addEventListener("DOMContentLoaded", () => {
+    const images = document.querySelectorAll("img");
+    images.forEach((img) => {
+      // Create a new Image object to preload
+      const preloadImg = new Image();
+      preloadImg.src = img.src;
+    });
+  });
+</script>
