@@ -1,0 +1,274 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  date: string;
+  description?: string;
+  mainImage?: {
+    src: string;
+    alt: string;
+    caption?: string;
+  };
+  sections?: {
+    id: string;
+    title: string;
+    icon?: string;
+  }[];
+  accentColor?: string;
+}
+
+const {
+  title,
+  date,
+  description = "Prashant Sharma's Blog - Mathematics, Programming, and Engineering",
+  mainImage,
+  sections = [],
+  accentColor = "#3b82f6", // Default blue color
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/prashant.ico" />
+    <meta name="description" content={description} />
+    <title>{title} | Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style define:vars={{ accentColor }}>
+      :root {
+        --accent-color: var(--accentColor);
+      }
+
+      .text-accent {
+        color: var(--accent-color);
+      }
+
+      .bg-accent {
+        background-color: var(--accent-color);
+      }
+
+      .border-accent {
+        border-color: var(--accent-color);
+      }
+
+      .section-nav a.active {
+        color: var(--accent-color);
+        font-weight: 600;
+        position: relative;
+      }
+
+      .section-nav a.active::before {
+        content: "";
+        position: absolute;
+        left: -10px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 3px;
+        height: 70%;
+        background-color: var(--accent-color);
+        border-radius: 2px;
+      }
+
+      .section-progress {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        height: 3px;
+        background: var(--accent-color);
+        z-index: 100;
+        transition: width 0.1s ease;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-900 font-sans">
+    <div class="min-h-screen flex flex-col">
+      <!-- Fixed header -->
+      <div class="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
+        <Header />
+      </div>
+
+      <!-- Reading progress indicator -->
+      <div class="section-progress" id="reading-progress"></div>
+
+      <!-- Add padding to push content below fixed header -->
+      <div class="pt-20">
+        <main class="container mx-auto px-4 py-12 md:px-6 lg:px-8 max-w-6xl">
+          <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Sidebar for section navigation -->
+            {
+              sections.length > 0 && (
+                <aside class="lg:w-1/4 lg:sticky lg:top-32 lg:self-start">
+                  <div class="bg-gray-50 p-4 rounded-lg shadow-sm border-l-4 border-accent transition-all hover:shadow-md">
+                    <h3 class="text-lg font-semibold mb-4 text-gray-800 flex items-center">
+                      <i class="fas fa-list-ul mr-2 text-accent" />
+                      <span>In This Article</span>
+                    </h3>
+                    <nav class="section-nav">
+                      <ul class="space-y-2">
+                        {sections.map((section) => (
+                          <li class="transition-all hover:translate-x-1">
+                            <a
+                              href={`#${section.id}`}
+                              class="text-gray-700 hover:text-accent transition-colors text-sm block py-1 pl-2 border-l border-gray-200"
+                              data-section-id={section.id}
+                            >
+                              {section.icon && (
+                                <i
+                                  class={`fas fa-${section.icon} mr-2 text-accent/70`}
+                                />
+                              )}
+                              {section.title}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </nav>
+                  </div>
+                </aside>
+              )
+            }
+
+            <!-- Main content -->
+            <article
+              class={`prose prose-lg lg:prose-xl mx-auto ${sections.length > 0 ? "lg:w-3/4" : "w-full"}`}
+            >
+              <header class="mb-8 pb-4 border-b border-gray-200">
+                <h1 class="text-4xl font-bold text-gray-900">{title}</h1>
+                <p class="text-gray-600 text-lg mt-2 flex items-center">
+                  <i class="fas fa-calendar-alt mr-2 text-accent/80"></i>
+                  {date}
+                </p>
+              </header>
+
+              {
+                mainImage && (
+                  <div class="my-8 overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <figure>
+                      <img
+                        src={mainImage.src}
+                        alt={mainImage.alt}
+                        class="w-full h-auto object-cover"
+                      />
+                      {mainImage.caption && (
+                        <figcaption class="text-center text-gray-600 text-sm mt-2 italic py-2 bg-gray-50">
+                          {mainImage.caption}
+                        </figcaption>
+                      )}
+                    </figure>
+                  </div>
+                )
+              }
+
+              <slot />
+            </article>
+          </div>
+        </main>
+      </div>
+      <Footer />
+    </div>
+
+    <script>
+      // Add smooth scrolling for section links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (this: HTMLAnchorElement, e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          const targetElement = targetId
+            ? document.querySelector(targetId)
+            : null;
+
+          if (targetElement) {
+            // Scroll with offset for fixed header
+            const headerHeight = 80; // Adjust based on your header height
+            const targetPosition =
+              targetElement.getBoundingClientRect().top +
+              window.pageYOffset -
+              headerHeight;
+
+            window.scrollTo({
+              top: targetPosition,
+              behavior: "smooth",
+            });
+
+            // Update URL without scrolling
+            history.pushState(null, "", targetId);
+          }
+        });
+      });
+
+      // Highlight active section on scroll and update reading progress
+      function updateActiveSection() {
+        const sections = document.querySelectorAll("h2[id], h3[id], h4[id]");
+        const navLinks = document.querySelectorAll("nav.section-nav a");
+        const progressBar = document.getElementById("reading-progress");
+
+        if (sections.length === 0) return;
+
+        // Calculate scroll progress
+        const scrollPosition = window.scrollY;
+        const documentHeight =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        const scrollPercentage = (scrollPosition / documentHeight) * 100;
+
+        if (progressBar) {
+          progressBar.style.width = scrollPercentage + "%";
+        }
+
+        // Find current section
+        let currentSection = "";
+        const headerOffset = 100; // Adjust based on your header height + some padding
+
+        sections.forEach((section) => {
+          const sectionTop =
+            section.getBoundingClientRect().top + window.pageYOffset;
+
+          if (window.pageYOffset >= sectionTop - headerOffset) {
+            currentSection = "#" + section.id;
+          }
+        });
+
+        // Highlight active nav link
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === currentSection) {
+            link.classList.add("active");
+          }
+        });
+      }
+
+      // Initialize and bind events
+      window.addEventListener("scroll", updateActiveSection);
+      window.addEventListener("resize", updateActiveSection);
+      document.addEventListener("DOMContentLoaded", updateActiveSection);
+
+      // Add hover effects for section headings
+      document.querySelectorAll("h2, h3, h4").forEach((heading) => {
+        heading.addEventListener("mouseenter", function (this: HTMLElement) {
+          this.style.transform = "translateX(5px)";
+          this.style.transition = "transform 0.3s ease";
+        });
+
+        heading.addEventListener("mouseleave", function (this: HTMLElement) {
+          this.style.transform = "translateX(0)";
+        });
+      });
+    </script>
+  </body>
+</html>

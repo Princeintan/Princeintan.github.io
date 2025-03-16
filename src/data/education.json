@@ -1,0 +1,32 @@
+{
+    "education": [
+      {
+        "degree": "BSMS (Mathematics Major and Physics Minor)",
+        "institution": "Indian Institute of Science Education and Research, Thiruvananthapuram",
+        "location": "Kerala, India",
+        "startDate": "2019",
+        "endDate": "2024",
+        "description": "BSMS is a research-oriented Dual Degree program",
+        "courses": [
+          "Applied Mathematics: Calculus, Linear Algebra, Numerical Analysis, Statistics, Theory of ODE, PDE, Number Theory and Cryptography",
+          "Pure Mathematics: Real Analysis, Theory of Groups and Rings, Complex Analysis, Fields, Modules and Algebras, General Topology, Probability Theory and Stochastic Process, Analysis on Manifolds, Measure Theory, Commutative Algebra",
+          "Programming: Mathematical Tools, Programming and Data Structures, Artificial Intelligence, Financial Engineering",
+          "Physics: Mechanics, Electromagnetism, Optics, Thermal and Statistical Physics, Condensed Matter Physics, Experimental Methods, Electronics, Advanced Mathematical Methods in Physics",
+          "Biology: Diversity and Evolution, Biological Structure and function, Genetics and Molecular Biology, Cell Biology and Signaling",
+          "Chemistry: Atomic Structure and Chemical Bonding, Concepts in Inorganic Chemistry, Basic Concepts in Organic Chemistry, Principles of Physical Chemistry, Instrumental Methods, Organic Chemistry",
+          "Miscellaneous: Communication Skills, Intro to Economics, Intro to Sociology, Planning and Economic Development"
+        ]
+      },
+      {
+        "degree": "Higher Secondary School",
+        "institution": "Rajkiya Pratibha Vikas Vidyalaya, Vasant Kunj",
+        "location": "New Delhi, India",
+        "startDate": "2017",
+        "endDate": "2019",
+        "description": "10+2 ",
+        "courses": [
+          "Physics, Chemistry, Mathematics, Economics", "English, Physical Education"
+        ]
+      }
+    ]
+  }

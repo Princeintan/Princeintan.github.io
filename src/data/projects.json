@@ -1,0 +1,58 @@
+{
+    "projects": [
+      {
+        "title": "Android App: Social Media App for Campus",
+        "description": "A social media platform for students to post pictures, ask questions, sell items, and access information like the mess menu and other campus services.",
+        "technology": ["Dart", "Flutter", "Google AdSense"],
+        "date": "Sep 2023 - Present",
+        "link": "/blogs/social-media-app",
+        "image": "/public/images/heyiiser.png",
+        "organization": "IISER TVM"
+      },
+      {
+        "title": "Android Game: Dino Running",
+        "description": "A mobile game developed using Dart and Flutter with integrated Google AdSense for advertisements.",
+        "technology": ["Dart", "Flutter", "Google AdSense"],
+        "date": "Oct 2023 - Present",
+        "link": "/blogs/dino-running",
+        "image": "/public/images/dinorun.png",
+        "organization": "Personal Project"
+      },
+      {
+        "title": "MIDI/DJ Controller with Arduino",
+        "description": "Developed using an Arduino Nano for analog-to-digital conversion and three 16-channel multiplexers for 32 analog and 16 digital inputs. Interfaced with VirtualDJ software via a virtual serial port to MIDI converter.",
+        "technology": ["Arduino", "Hardware Design", "MIDI", "VirtualDJ"],
+        "date": "Oct 2022 - Feb 2023",
+        "link": "/blogs/midi",
+        "image": "/public/images/midi_dj.jpg",
+        "organization": "Personal Project"
+      },
+      {
+        "title": "DVI output with RP2040",
+        "description": "Implemented DVI output on a 32\" LCD screen using a Raspberry Pi Pico and a GitHub repository. Added a real-time clock to create a stopwatch for a conference or talk use.",
+        "technology": ["Raspberry Pi Pico", "RP2040", "DVI", "Real-time Clock"],
+        "date": "Jul 2022 - Nov 2022",
+        "link": "/blogs/dvi-output",
+        "image": "/public/images/dvi.png",
+        "organization": "Personal Project"
+      },
+      {
+        "title": "AID-BOT: Homemade Autonomous UAV",
+        "description": "Utilized an Arduino Nano as the flight controller and additional Arduino units to construct the transmitter and receiver. Built a fixed-wing craft using repurposed materials, capable of manually dropping a payload of approximately 400g.",
+        "technology": ["Arduino", "UAV", "Flight Control", "Wireless Communication"],
+        "date": "Aug 2020 - Nov 2021",
+        "link": "/blogs/aid-bot",
+        "image": "/public/images/aidbot.png",
+        "organization": "Personal Project"
+      },
+      {
+        "title": "Web App: Sugar Coaster",
+        "description": "A game designed to enhance the understanding of glycemic responses in various daily-consumed foods, targeting audiences from children to diabetic patients.",
+        "technology": ["Dart", "Flutter", "GitHub"],
+        "date": "Feb 2024 - Mar 2024",
+        "link": null,
+        "image": "/public/images/sugarcoaster.png",
+        "organization": "ICAR New Delhi"
+      }
+    ]
+  }

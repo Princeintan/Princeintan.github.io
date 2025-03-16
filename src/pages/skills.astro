@@ -1,0 +1,82 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import SkillsList from "../components/SkillsList.astro";
+import skillsData from "../data/skills.json";
+
+// Get all skill categories
+const { categories } = skillsData;
+---
+
+<MainLayout title="Skills | Prashant Sharma">
+  <div class="max-w-3xl mx-auto mb-8">
+    <h1 class="text-4xl font-bold mb-4">Skills</h1>
+    <p class="text-xl text-gray-700">
+      My diverse skill set spans multiple domains including programming,
+      instrumentation, and data analysis.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    {
+      categories.map((category) => (
+        <SkillsList title={category.title} skills={category.skills} />
+      ))
+    }
+  </div>
+
+  <div class="mt-12 bg-white rounded-lg shadow-md p-6">
+    <h2 class="text-2xl font-bold mb-6">Skill Level Breakdown</h2>
+
+    <div class="space-y-6">
+      <div>
+        <div class="flex justify-between mb-2">
+          <h3 class="font-medium">Programming</h3>
+          <!-- <span>90%</span> -->
+        </div>
+        <div class="w-full bg-gray-200 rounded-full h-2.5">
+          <div class="bg-accent h-2.5 rounded-full" style="width: 90%"></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="flex justify-between mb-2">
+          <h3 class="font-medium">Hardware Design</h3>
+          <!-- <span>85%</span> -->
+        </div>
+        <div class="w-full bg-gray-200 rounded-full h-2.5">
+          <div class="bg-accent h-2.5 rounded-full" style="width: 85%"></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="flex justify-between mb-2">
+          <h3 class="font-medium">Mathematics</h3>
+          <!-- <span>95%</span> -->
+        </div>
+        <div class="w-full bg-gray-200 rounded-full h-2.5">
+          <div class="bg-accent h-2.5 rounded-full" style="width: 95%"></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="flex justify-between mb-2">
+          <h3 class="font-medium">Instrumentation</h3>
+          <!-- <span>80%</span> -->
+        </div>
+        <div class="w-full bg-gray-200 rounded-full h-2.5">
+          <div class="bg-accent h-2.5 rounded-full" style="width: 80%"></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="flex justify-between mb-2">
+          <h3 class="font-medium">Data Analysis</h3>
+          <!-- <span>85%</span> -->
+        </div>
+        <div class="w-full bg-gray-200 rounded-full h-2.5">
+          <div class="bg-accent h-2.5 rounded-full" style="width: 85%"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>

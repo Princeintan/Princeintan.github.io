@@ -1,0 +1,93 @@
+{
+    "experiences": [
+      {
+        "title": "Research Assistant",
+        "company": "IIT Delhi",
+        "location": "Department of Material Science and Engineering, India",
+        "startDate": "Oct 2024",
+        "endDate": "Present",
+        "description": [
+          "Designing an Instrumental setup for testing Triboelectric Nanogenerator Devices in Vacuum."
+        ],
+        "technologies": ["Instrumentation", "Vacuum Systems", "TENG Devices"]
+      },
+      {
+        "title": "Project Assistant",
+        "company": "IISER TVM",
+        "location": "SMART Lab, Thiruvananthapuram, India",
+        "startDate": "Jul 2024",
+        "endDate": "Sep 2024",
+        "description": [
+          "Designed and implemented software to heat and read Six IDE(s) at the same time via serial communication with an Arduino Mega, with precise temperature regulation through PWM duty cycle adjustments.",
+          "Published software for measurements using Keithley 6510 and six-channel Digital Power Supply.",
+          "Engineered and fabricated a six-channel digital power Supply that includes a custom PCB, integrating an LCD display and joystick controller for the user interface."
+        ],
+        "technologies": ["Arduino", "Serial Communication", "PCB Design", "Keithley 6510", "PWM", "LCD"]
+      },
+      {
+        "title": "Major Project",
+        "company": "IISER TVM",
+        "location": "School of Mathematics, Thiruvananthapuram, India",
+        "startDate": "Aug 2023",
+        "endDate": "Apr 2024",
+        "description": [
+          "Developed a Python library from scratch for dimensionality reduction using Principal Component Analysis (PCA)",
+          "Applied K-Nearest Neighbors (KNN), Decision Tree, and Neural Networks as classifiers to analyze gas sensor data and identify various gases",
+          "Constructed a two-layer neural network to enhance classification accuracy"
+        ],
+        "technologies": ["Python", "Machine Learning", "PCA", "KNN", "Decision Trees", "Neural Networks"]
+      },
+      {
+        "title": "Minor Project",
+        "company": "IISER TVM",
+        "location": "SMART Lab, Thiruvananthapuram, India",
+        "startDate": "Jan 2023",
+        "endDate": "May 2023",
+        "description": [
+          "Developed a web-based version of a Lock-In Amplifier using a Red Pitaya (FPGA) board",
+          "Designed and implemented a circuit to maintain constant temperature control for a 20mW heater",
+          "Interfaced an LVDT (Linear Variable Differential Transformer) with an Arduino and Keithley meter to accurately measure small displacements"
+        ],
+        "technologies": ["FPGA", "Red Pitaya", "Arduino", "Circuit Design", "LVDT", "Keithley"]
+      },
+      {
+        "title": "Summer Internship",
+        "company": "IIT Delhi",
+        "location": "Department of Material Science and Engineering, India",
+        "startDate": "Jul 2022",
+        "endDate": "Aug 2022",
+        "description": [
+          "Designed a 3D Model for the Concept of an in-house-built test setup for measuring the performance of the triboelectric nanogenerator",
+          "Interfaced and troubleshot the setup starting from scratch",
+          "Constructed a highly sensitive force measure device using Arduino"
+        ],
+        "technologies": ["3D Modeling", "Arduino", "Force Measurement", "Triboelectric Nanogenerator"]
+      },
+      {
+        "title": "Industrial Internship",
+        "company": "P3C Technology & Solutions Pvt Ltd",
+        "location": "Gurugram, Haryana, India",
+        "startDate": "Jul 2022",
+        "endDate": "Aug 2022",
+        "description": [
+          "Utilized SolidWorks to design a 3D model and create animations for a robotic coating machine for cars",
+          "Troubleshot and optimized the performance of the robotic coating system to ensure operational efficiency"
+        ],
+        "technologies": ["SolidWorks", "3D Modeling", "Animation", "Robotics"]
+      },
+      {
+        "title": "Online Internship",
+        "company": "IIT Roorkee",
+        "location": "Department of Physics, India",
+        "startDate": "Jan 2023",
+        "endDate": "Aug 2023",
+        "description": [
+          "Study of spherical astronomy and eclipse formation from the Book W. Smart",
+          "Built a MATLAB Program to solve problems in spherical trigonometry",
+          "Prepared digital illustrative notes for a basic astronomy course",
+          "Created tutorials for the same"
+        ],
+        "technologies": ["MATLAB", "Spherical Trigonometry", "Astronomy", "Educational Content Creation"]
+      }
+    ]
+  }

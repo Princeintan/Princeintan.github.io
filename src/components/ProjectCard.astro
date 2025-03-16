@@ -1,0 +1,64 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  technology: string[];
+  date: string;
+  link?: string;
+  image?: string;
+  organization?: string;
+}
+
+const {
+  title,
+  description,
+  technology,
+  date,
+  link,
+  image = "/images/default-project.jpg",
+  organization,
+} = Astro.props;
+---
+
+<div
+  class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg"
+>
+  <div class="relative">
+    <img src={image} alt={title} class="w-full h-48 object-cover" />
+    {
+      organization && (
+        <div class="absolute top-0 right-0 bg-accent text-white px-3 py-1 text-sm font-medium">
+          {organization}
+        </div>
+      )
+    }
+  </div>
+  <div class="p-5">
+    <h3 class="text-xl font-semibold mb-2">{title}</h3>
+    <p class="text-gray-600 text-sm mb-2">{date}</p>
+    <p class="text-gray-700 mb-4">{description}</p>
+
+    <div class="flex flex-wrap gap-2 mb-4">
+      {
+        technology.map((tech) => (
+          <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">
+            {tech}
+          </span>
+        ))
+      }
+    </div>
+
+    {
+      link && (
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block bg-accent text-white px-4 py-2 rounded hover:bg-accent/90 transition-colors"
+        >
+          View Project
+        </a>
+      )
+    }
+  </div>
+</div>

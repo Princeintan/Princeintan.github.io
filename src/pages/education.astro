@@ -1,0 +1,56 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import educationData from "../data/education.json";
+
+// Get education data
+const { education } = educationData;
+---
+
+<MainLayout title="Education | Prashant Sharma">
+  <div class="max-w-3xl mx-auto mb-8">
+    <h1 class="text-4xl font-bold mb-4">Education</h1>
+    <p class="text-xl text-gray-700">
+      My academic journey in mathematics and physics has provided me with a
+      strong foundation for pursuing research and development in various
+      technical domains.
+    </p>
+  </div>
+
+  <div class="space-y-8">
+    {
+      education.map((item) => (
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <div class="p-6">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+              <div>
+                <h2 class="text-2xl font-bold text-gray-800">{item.degree}</h2>
+                <p class="text-xl text-accent font-medium">
+                  {item.institution}
+                </p>
+                <p class="text-gray-600">{item.location}</p>
+              </div>
+              <div class="text-gray-600 text-lg mt-2 md:mt-0 md:text-right">
+                <p>
+                  {item.startDate} - {item.endDate}
+                </p>
+              </div>
+            </div>
+
+            <p class="mt-4 text-gray-700">{item.description}</p>
+
+            <div class="mt-8">
+              <h3 class="text-xl font-semibold mb-4">Courses Taken</h3>
+              <div class="space-y-4">
+                {item.courses.map((course) => (
+                  <div class="bg-gray-50 p-4 rounded-md">
+                    <p class="text-gray-800">{course}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</MainLayout>

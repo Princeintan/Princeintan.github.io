@@ -1,0 +1,36 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import projectsData from "../data/projects.json";
+
+// Get all projects
+const { projects } = projectsData;
+---
+
+<MainLayout title="Projects | Prashant Sharma">
+  <div class="max-w-3xl mx-auto mb-8">
+    <h1 class="text-4xl font-bold mb-4">Projects</h1>
+    <p class="text-xl text-gray-700">
+      Here's a collection of projects I've worked on, ranging from mobile
+      applications to hardware designs and instrumentation setups.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    {
+      projects.map((project) => (
+        <div id={project.title.toLowerCase().replace(/\s+/g, "-")}>
+          <ProjectCard
+            title={project.title}
+            description={project.description}
+            technology={project.technology}
+            date={project.date}
+            link={project.link ?? ""}
+            image={project.image}
+            organization={project.organization}
+          />
+        </div>
+      ))
+    }
+  </div>
+</MainLayout>

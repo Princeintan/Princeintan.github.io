@@ -1,0 +1,100 @@
+---
+import BlogLayout from "../../layouts/BlogLayout.astro";
+import BlogImage from "../../components/BlogImage.astro";
+---
+
+<BlogLayout
+  title="Android App: Social Media App for Campus"
+  date="September 2023 - Present"
+  description="A custom social media platform designed specifically for IISER TVM campus community"
+  mainImage={{
+    src: "/public/images/social-media-app.jpg",
+    alt: "Screenshot of the campus social media app interface",
+    caption: "The social media app in action on an Android device",
+  }}
+>
+  <p>
+    This application was designed specifically for the IISER TVM campus
+    community and received official approval from the campus council. It serves
+    as a centralized social platform where students can connect, share
+    information, and access campus services.
+  </p>
+
+  <h2>Key Features</h2>
+  <ul>
+    <li>Photo sharing capabilities for campus events and activities</li>
+    <li>Q&A forum for academic and campus-related questions</li>
+    <li>Marketplace for students to buy and sell used items</li>
+    <li>Real-time access to campus information (mess menu, events, notices)</li>
+    <li>Campus services directory and information hub</li>
+  </ul>
+
+  <BlogImage
+    src="/public/images/social-app-screens.jpg"
+    alt="Multiple screens from the social media app"
+    caption="Various screens from the campus social media application"
+    align="wide"
+  />
+
+  <h2>Technical Implementation</h2>
+  <p>
+    The application was built using Flutter and Dart, allowing for rapid
+    development of a cross-platform solution with a native feel. Flutter's
+    widget-based architecture enabled the creation of a responsive and intuitive
+    user interface with smooth animations and transitions.
+  </p>
+
+  <p>For the backend, I implemented:</p>
+  <ul>
+    <li>Firebase Authentication for secure user login</li>
+    <li>Cloud Firestore for real-time data synchronization</li>
+    <li>Firebase Storage for media content</li>
+    <li>Firebase Cloud Messaging for push notifications</li>
+  </ul>
+
+  <h2>Monetization Strategy</h2>
+  <p>
+    To help sustain the app's ongoing development and server costs, Google
+    AdSense was integrated to display non-intrusive advertisements. The ad
+    implementation was carefully designed to maintain user experience while
+    generating modest revenue to support the app's operation.
+  </p>
+
+  <h2>Publication</h2>
+  <p>
+    After extensive testing and refinement, the app was successfully published
+    on the Google Play Store, making it easily accessible to all campus
+    community members. User feedback has been incorporated through regular
+    updates to improve functionality and fix issues.
+  </p>
+
+  <BlogImage
+    src="/public/images/social-app-playstore.jpg"
+    alt="App listing on Google Play Store"
+    caption="The app's Google Play Store listing showing installation statistics"
+    align="wide"
+  />
+
+  <h2>Impact</h2>
+  <p>
+    The application has become an integral part of campus life, facilitating
+    better communication between students and providing easy access to important
+    campus information. Usage statistics show active engagement, particularly
+    around meal times (for mess menu information) and during campus events.
+  </p>
+
+  <div class="mt-8 flex flex-wrap gap-4">
+    <a
+      href="/projects"
+      class="bg-accent hover:bg-accent/90 text-white px-6 py-3 rounded-md transition-colors font-medium"
+    >
+      View Other Projects
+    </a>
+    <a
+      href="/contact"
+      class="bg-gray-100 hover:bg-gray-200 text-gray-800 px-6 py-3 rounded-md transition-colors font-medium"
+    >
+      Contact Me
+    </a>
+  </div>
+</BlogLayout>

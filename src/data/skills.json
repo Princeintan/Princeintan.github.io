@@ -1,0 +1,28 @@
+{
+    "categories": [
+      {
+        "title": "Programming Languages",
+        "skills": ["C", "C#", "C++", "Python", "Dart"]
+      },
+      {
+        "title": "Frameworks",
+        "skills": [".Net","Flutter", "Astro"]
+      },
+      {
+        "title": "Python Libraries",
+        "skills": ["Pandas", "TensorFlow", "SciPy", "NumPy", "Matplotlib"]
+      },
+      {
+        "title": "Tools & Platforms",
+        "skills": ["Solid-Works", "KiCad", "Proteus", "Unity Engine", "Android Studio", "MATLAB", "ANSYS MoRIA", "Git", "Docker"]
+      },
+      {
+        "title": "Hardware & Embedded Systems",
+        "skills": ["Arduino", "Raspberry Pi", "PCB Design", "Sensors", "Actuators", "FPGA"]
+      },
+      {
+        "title": "Areas of Expertise",
+        "skills": ["Instrumentation", "3D Printing","Laser Cutting", "UAV Pilot", "DJ", "Machine Learning", "Data Analysis"]
+      }
+    ]
+  }

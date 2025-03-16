@@ -1,0 +1,33 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  caption?: string;
+  align?: "left" | "center" | "right" | "wide" | "full";
+}
+
+const { src, alt, caption, align = "center" } = Astro.props;
+
+const alignClasses = {
+  left: "float-left mr-8 mb-4 w-1/3 md:w-1/4",
+  center: "mx-auto my-8",
+  right: "float-right ml-8 mb-4 w-1/3 md:w-1/4",
+  wide: "mx-auto my-8 w-full md:w-4/5",
+  full: "mx-auto my-8 w-full",
+};
+---
+
+<figure class={`${alignClasses[align]} not-prose`}>
+  <img
+    src={src}
+    alt={alt}
+    class="rounded-lg shadow-md w-full h-auto object-cover"
+  />
+  {
+    caption && (
+      <figcaption class="text-center text-gray-600 text-sm mt-2 italic">
+        {caption}
+      </figcaption>
+    )
+  }
+</figure>

@@ -1,0 +1,134 @@
+---
+import BlogLayout from "../../layouts/BlogLayout.astro";
+import BlogImage from "../../components/BlogImage.astro";
+---
+
+<BlogLayout
+  title="DVI Output with RP2040"
+  date="July 2022 - November 2022"
+  description="Creating a digital video interface using the Raspberry Pi Pico microcontroller"
+  mainImage={{
+    src: "/public/images/rp2040_dvi.jpg",
+    alt: "DVI output system connected to a 32-inch LCD screen",
+    caption: "The Raspberry Pi Pico driving a 32-inch LCD screen via DVI",
+  }}
+>
+  <p>
+    This project demonstrates the capabilities of the RP2040 microcontroller
+    (Raspberry Pi Pico) by implementing a Digital Visual Interface (DVI) output
+    to drive a standard 32-inch LCD screen. What makes this project particularly
+    interesting is achieving video output from such a small and affordable
+    microcontroller.
+  </p>
+
+  <h2>Technical Overview</h2>
+  <p>
+    The RP2040 chip wasn't originally designed for video output, making this
+    implementation an interesting technical challenge. To achieve DVI output, I
+    leveraged:
+  </p>
+  <ul>
+    <li>The PIO (Programmable I/O) feature of the RP2040</li>
+    <li>
+      Precise timing mechanisms to generate TMDS (Transition Minimized
+      Differential Signaling) signals
+    </li>
+    <li>A GitHub repository that provided core DVI signal generation code</li>
+    <li>
+      Custom circuit design for proper signal levels and impedance matching
+    </li>
+  </ul>
+
+  <BlogImage
+    src="/public/images/rp2040_circuit.jpg"
+    alt="Circuit schematic and breadboard implementation"
+    caption="The circuit schematic and physical implementation on a breadboard"
+    align="wide"
+  />
+
+  <h2>Implementation Details</h2>
+  <p>The implementation involved several key components:</p>
+  <ul>
+    <li>
+      Configuring the RP2040's PIO state machines to generate precise TMDS
+      signals
+    </li>
+    <li>Setting up DVI timing parameters for standard display resolutions</li>
+    <li>Creating frame buffer management in the limited RAM of the Pico</li>
+    <li>
+      Designing efficient graphics rendering routines optimized for the
+      microcontroller's resources
+    </li>
+    <li>
+      Building the physical interface between the Pico and the DVI connector
+    </li>
+  </ul>
+
+  <h2>Realtime Clock Integration</h2>
+  <p>
+    To enhance the functionality of the system, I added a real-time clock module
+    that enables accurate time tracking. This addition transformed the project
+    into a practical conference timer/stopwatch that can be used during
+    presentations and talks.
+  </p>
+
+  <p>The stopwatch functionality includes:</p>
+  <ul>
+    <li>Large, clear time display visible from across a conference room</li>
+    <li>Configurable countdown timer with visual alerts</li>
+    <li>Simple button interface for start, stop, and reset functions</li>
+    <li>Battery backup to maintain time settings during power loss</li>
+  </ul>
+
+  <BlogImage
+    src="/public/images/rp2040_stopwatch.jpg"
+    alt="The system displaying a stopwatch on the LCD screen"
+    caption="The stopwatch display in action during a conference presentation"
+    align="wide"
+  />
+
+  <h2>Technical Challenges</h2>
+  <p>This project presented several interesting challenges:</p>
+  <ul>
+    <li>
+      Achieving sufficient processing power for video signal generation on a
+      limited microcontroller
+    </li>
+    <li>Managing the precise timing requirements of the DVI protocol</li>
+    <li>Overcoming electrical noise issues in the signal path</li>
+    <li>Optimizing code to fit within the RP2040's memory constraints</li>
+    <li>
+      Designing a user interface that's visible and usable from a distance
+    </li>
+  </ul>
+
+  <h2>Applications</h2>
+  <p>The completed system has been used for:</p>
+  <ul>
+    <li>Conference and seminar time management</li>
+    <li>Digital signage for campus events</li>
+    <li>Information displays in public areas</li>
+    <li>Educational demonstrations of embedded graphics systems</li>
+  </ul>
+
+  <p>
+    This project demonstrates how relatively simple microcontrollers can be
+    pushed beyond their intended applications with creative engineering
+    approaches.
+  </p>
+
+  <div class="mt-8 flex flex-wrap gap-4">
+    <a
+      href="/projects"
+      class="bg-accent hover:bg-accent/90 text-white px-6 py-3 rounded-md transition-colors font-medium"
+    >
+      View Other Projects
+    </a>
+    <a
+      href="/contact"
+      class="bg-gray-100 hover:bg-gray-200 text-gray-800 px-6 py-3 rounded-md transition-colors font-medium"
+    >
+      Contact Me
+    </a>
+  </div>
+</BlogLayout>

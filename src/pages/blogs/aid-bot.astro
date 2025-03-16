@@ -1,0 +1,153 @@
+---
+import BlogLayout from "../../layouts/BlogLayout.astro";
+import BlogImage from "../../components/BlogImage.astro";
+---
+
+<BlogLayout
+  title="AID-BOT: Homemade Autonomous UAV for Air-Dropping Medicines in Remote Areas"
+  date="August 2020 - November 2021"
+  description="A fixed-wing drone designed to deliver medical supplies to remote locations"
+  mainImage={{
+    src: "/public/images/aid_bot_uav.jpg",
+    alt: "The AID-BOT fixed-wing UAV during a test flight",
+    caption:
+      "AID-BOT during one of its test flights with payload compartment visible",
+  }}
+>
+  <p>
+    AID-BOT was an ambitious project aimed at creating an affordable, autonomous
+    unmanned aerial vehicle (UAV) capable of delivering medical supplies to
+    remote or hard-to-reach areas. The project's primary goal was to design a
+    solution that could help address healthcare accessibility challenges in
+    rural regions with limited infrastructure.
+  </p>
+
+  <h2>Project Motivation</h2>
+  <p>
+    Many remote communities face significant challenges in accessing timely
+    medical care and supplies. Traditional delivery methods can be impeded by:
+  </p>
+  <ul>
+    <li>Poor road infrastructure</li>
+    <li>Challenging terrain (mountains, forests, rivers)</li>
+    <li>Seasonal weather conditions that limit ground transportation</li>
+    <li>The need for rapid delivery of time-sensitive medications</li>
+  </ul>
+
+  <p>
+    AID-BOT was designed as a cost-effective solution to these challenges,
+    leveraging readily available components and repurposed materials to create a
+    functioning medical delivery drone.
+  </p>
+
+  <BlogImage
+    src="/public/images/aid_bot_components.jpg"
+    alt="AID-BOT components and construction"
+    caption="Major components of the AID-BOT during assembly phase"
+    align="wide"
+  />
+
+  <h2>Technical Implementation</h2>
+  <p>
+    The UAV was built as a fixed-wing aircraft, which offers several advantages
+    over multi-rotor designs for long-distance applications:
+  </p>
+  <ul>
+    <li>Superior range and endurance</li>
+    <li>Better energy efficiency</li>
+    <li>Higher speed for covering larger distances</li>
+    <li>More stability in windy conditions</li>
+  </ul>
+
+  <h3>Flight Control System</h3>
+  <p>
+    At the heart of AID-BOT was an Arduino Nano functioning as the primary
+    flight controller. This microcontroller managed:
+  </p>
+  <ul>
+    <li>Flight stabilization and control surface management</li>
+    <li>Navigation using GPS coordinates</li>
+    <li>Payload release mechanism timing</li>
+    <li>Data logging for flight analysis</li>
+  </ul>
+
+  <h3>Communication System</h3>
+  <p>
+    I built both the transmitter and receiver units using additional Arduino
+    microcontrollers, which handled:
+  </p>
+  <ul>
+    <li>Remote control commands for manual flight phases</li>
+    <li>Telemetry data transmission back to the ground station</li>
+    <li>Fail-safe protocols for emergencies</li>
+    <li>Command verification for critical operations like payload release</li>
+  </ul>
+
+  <h3>Airframe Design</h3>
+  <p>
+    The fixed-wing craft was constructed primarily from repurposed and upcycled
+    materials to keep costs low while maintaining structural integrity:
+  </p>
+  <ul>
+    <li>Foam board for the main wing and fuselage structure</li>
+    <li>Carbon fiber rods for reinforcement of high-stress areas</li>
+    <li>
+      3D printed components for specialized parts like control horns and payload
+      bay
+    </li>
+    <li>Repurposed electronic components from older devices</li>
+  </ul>
+
+  <BlogImage
+    src="/public/images/aid_bot_payload.jpg"
+    alt="AID-BOT payload release mechanism"
+    caption="The payload bay and release mechanism capable of carrying medicine packages"
+    align="wide"
+  />
+
+  <h2>Payload Capacity</h2>
+  <p>
+    The aircraft was designed to carry and accurately drop a payload of
+    approximately 400 grams, which is sufficient for:
+  </p>
+  <ul>
+    <li>Basic medication packages and first aid supplies</li>
+    <li>Small vials of temperature-sensitive vaccines</li>
+    <li>Emergency medical tools and diagnostic equipment</li>
+    <li>Blood samples or test kits</li>
+  </ul>
+
+  <h2>Testing and Results</h2>
+  <p>The AID-BOT underwent multiple iterations and testing phases:</p>
+  <ul>
+    <li>Initial testing focused on flight stability and control</li>
+    <li>
+      Secondary tests evaluated payload carrying capacity and flight endurance
+    </li>
+    <li>
+      Final testing included autonomous navigation and precision payload drops
+    </li>
+  </ul>
+
+  <p>
+    The project successfully demonstrated the feasibility of using low-cost
+    components to build a functional medical delivery drone. While not as
+    sophisticated as commercial solutions, AID-BOT proved that DIY approaches
+    could deliver practical results for humanitarian applications.
+  </p>
+
+  <div class="mt-8 flex flex-wrap gap-4">
+    <a
+      href="/projects"
+      class="bg-accent hover:bg-accent/90 text-white px-6 py-3 rounded-md transition-colors font-medium"
+    >
+      View Other Projects
+    </a>
+    <a
+      href="/contact"
+      class="bg-gray-100 hover:bg-gray-200 text-gray-800 px-6 py-3 rounded-md transition-colors font-medium"
+    >
+      Contact Me
+    </a>
+  </div>
+</BlogLayout>

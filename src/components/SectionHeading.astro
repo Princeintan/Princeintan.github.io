@@ -1,0 +1,94 @@
+---
+interface Props {
+  title: string;
+  id?: string;
+  level?: 2 | 3 | 4;
+  icon?: string; // Optional icon name
+}
+
+const { title, id, level = 2, icon } = Astro.props;
+const headingId =
+  id ||
+  title
+    .toLowerCase()
+    .replace(/\s+/g, "-")
+    .replace(/[^\w-]/g, "");
+---
+
+{
+  level === 2 && (
+    <div class="section-container my-12">
+      <div class="section-divider flex items-center mb-4">
+        <div class="h-px bg-gradient-to-r from-transparent via-accent to-transparent flex-grow" />
+        {icon && (
+          <div class="mx-4 text-accent">
+            <i class={`fas fa-${icon}`} />
+          </div>
+        )}
+        <h2
+          id={headingId}
+          class="scroll-mt-32 px-4 py-2 bg-accent/10 rounded-lg text-accent border-l-4 border-accent"
+        >
+          {title}
+        </h2>
+        <div class="h-px bg-gradient-to-r from-accent via-accent/30 to-transparent flex-grow" />
+      </div>
+    </div>
+  )
+}
+
+{
+  level === 3 && (
+    <div class="section-container my-8">
+      <div class="section-divider flex items-center mb-3">
+        {icon && (
+          <div class="mr-3 text-accent/80">
+            <i class={`fas fa-${icon}`} />
+          </div>
+        )}
+        <h3
+          id={headingId}
+          class="scroll-mt-32 border-b-2 border-accent/50 pb-1 text-gray-800"
+        >
+          {title}
+        </h3>
+      </div>
+    </div>
+  )
+}
+
+{
+  level === 4 && (
+    <div class="section-container my-6">
+      <h4
+        id={headingId}
+        class="scroll-mt-32 font-medium text-accent/90 flex items-center"
+      >
+        {icon && (
+          <span class="mr-2 text-sm">
+            <i class={`fas fa-${icon}`} />
+          </span>
+        )}
+        <span>{title}</span>
+      </h4>
+    </div>
+  )
+}
+
+<style>
+  .section-container {
+    position: relative;
+  }
+
+  h2,
+  h3,
+  h4 {
+    transition: color 0.3s ease;
+  }
+
+  h2:hover,
+  h3:hover,
+  h4:hover {
+    color: var(--accent-color, #3b82f6);
+  }
+</style>

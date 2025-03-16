@@ -1,0 +1,107 @@
+---
+import BlogLayout from "../../layouts/BlogLayout.astro";
+import BlogImage from "../../components/BlogImage.astro";
+---
+
+<BlogLayout
+  title="Android Game: Dino Running"
+  date="October 2023 - Present"
+  description="A fun endless runner game inspired by the Chrome dinosaur, built with Flutter"
+  mainImage={{
+    src: "/public/images/dino-running-game.jpg",
+    alt: "Screenshot of Dino Running game",
+    caption: "Dino Running in action on an Android device",
+  }}
+>
+  <p>
+    Dino Running is an engaging endless runner game inspired by the popular
+    Chrome browser offline dinosaur game. Players control a dinosaur character
+    as it jumps over cacti and avoids obstacles, with the difficulty gradually
+    increasing as the game progresses.
+  </p>
+
+  <div class="my-8 text-center">
+    <a
+      href="https://play.google.com/store/apps/details?id=com.prashantsharma.dinorunning"
+      class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-md transition-colors font-medium inline-flex items-center"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-5 w-5 mr-2"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M3 17a1 1 0 001 1h12a1 1 0 001-1V3a1 1 0 00-1-1H4a1 1 0 00-1 1v14zm9-12a1 1 0 011-1h2a1 1 0 110 2h-2a1 1 0 01-1-1zm0 4a1 1 0 011-1h2a1 1 0 110 2h-2a1 1 0 01-1-1zm-6 0a1 1 0 011-1h2a1 1 0 110 2H7a1 1 0 01-1-1zm0 4a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1z"
+          clip-rule="evenodd"></path>
+      </svg>
+      Download, Play, and Review
+    </a>
+  </div>
+
+  <h2>Game Development</h2>
+  <p>
+    I developed this game using Dart and Flutter, which allowed for smooth
+    animations and responsive controls. Flutter's custom painting capabilities
+    were particularly useful for rendering game elements and creating a fluid
+    gaming experience.
+  </p>
+
+  <BlogImage
+    src="/public/images/dino-game-development.jpg"
+    alt="Game development process showing code and graphics"
+    caption="Behind the scenes of Dino Running's development"
+    align="wide"
+  />
+
+  <h2>Technical Features</h2>
+  <ul>
+    <li>Custom physics engine for jump mechanics and collision detection</li>
+    <li>Progressive difficulty scaling as gameplay continues</li>
+    <li>High score tracking and persistence</li>
+    <li>Responsive controls optimized for mobile play</li>
+    <li>Sound effects and minimal visual design for an engaging experience</li>
+  </ul>
+
+  <h2>Monetization</h2>
+  <p>
+    To support ongoing development and updates, I integrated Google AdSense for
+    in-game advertisements. These ads are implemented in a non-intrusive manner,
+    typically appearing between game sessions rather than during active gameplay
+    to maintain a positive user experience.
+  </p>
+
+  <h2>Publication</h2>
+  <p>
+    The game was successfully published on the Google Play Store in September
+    2023 and has received positive reviews from users. Regular updates have been
+    released to add features and fix bugs based on user feedback.
+  </p>
+
+  <h2>Future Enhancements</h2>
+  <p>I'm currently working on additional features for the game, including:</p>
+  <ul>
+    <li>New character skins and customization options</li>
+    <li>Different game environments and themes</li>
+    <li>Power-ups and special abilities</li>
+    <li>Global leaderboards using Google Play Games services</li>
+  </ul>
+
+  <div class="mt-8 flex flex-wrap gap-4">
+    <a
+      href="/projects"
+      class="bg-accent hover:bg-accent/90 text-white px-6 py-3 rounded-md transition-colors font-medium"
+    >
+      View Other Projects
+    </a>
+    <a
+      href="/contact"
+      class="bg-gray-100 hover:bg-gray-200 text-gray-800 px-6 py-3 rounded-md transition-colors font-medium"
+    >
+      Contact Me
+    </a>
+  </div>
+</BlogLayout>

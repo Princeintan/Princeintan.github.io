@@ -1,0 +1,138 @@
+---
+import BlogLayout from "../../layouts/BlogLayout.astro";
+import BlogImage from "../../components/BlogImage.astro";
+import SectionHeading from "../../components/SectionHeading.astro";
+
+// Define your sections for the navigation with icons
+const sections = [
+  { id: "hardware-design", title: "Hardware Design", icon: "microchip" },
+  {
+    id: "technical-implementation",
+    title: "Technical Implementation",
+    icon: "code",
+  },
+  { id: "case-design", title: "Case Design", icon: "cube" },
+  {
+    id: "performance-testing",
+    title: "Performance Testing",
+    icon: "tachometer-alt",
+  },
+  {
+    id: "real-world-application",
+    title: "Real-World Application",
+    icon: "music",
+  },
+];
+---
+
+<BlogLayout
+  title="MIDI/DJ Controller with Arduino"
+  date="October 2022 - February 2023"
+  description="A custom-built DJ controller using Arduino and multiplexers for professional DJ performances"
+  mainImage={{
+    src: "/public/images/midi_dj.jpg",
+    alt: "Custom MIDI/DJ controller hardware",
+    caption: "The completed custom MIDI/DJ controller in action",
+  }}
+  sections={sections}
+  accentColor="#6366f1"
+>
+  <p>
+    This project involved designing and building a fully functional MIDI/DJ
+    controller from scratch using an Arduino Nano as the central processing
+    unit. The controller was specifically designed for use with VirtualDJ
+    software and has been successfully used in multiple live DJ performances.
+  </p>
+
+  <SectionHeading
+    title="Hardware Design"
+    id="hardware-design"
+    icon="microchip"
+  />
+  <p>The controller features an extensive input array that includes:</p>
+  <ul>
+    <li>32 analog inputs (faders, potentiometers, and rotary encoders)</li>
+    <li>16 digital inputs (buttons and switches)</li>
+    <li>RGB LED feedback indicators for various controller states</li>
+  </ul>
+
+  <BlogImage
+    src="/public/images/midi_controller_internals.jpg"
+    alt="Internal wiring and components of the MIDI controller"
+    caption="The internal wiring and component layout of the controller"
+    align="wide"
+  />
+
+  <SectionHeading
+    title="Technical Implementation"
+    id="technical-implementation"
+    icon="code"
+  />
+  <p>
+    To handle the large number of inputs with the limited I/O pins available on
+    the Arduino Nano, I implemented:
+  </p>
+  <ul>
+    <li>Three 16-channel multiplexers (CD74HC4067) for input expansion</li>
+    <li>Custom PCB design for reliable connections between components</li>
+    <li>Efficient interrupt-based polling system for responsive controls</li>
+    <li>
+      Virtual serial port to MIDI converter for communication with the host
+      computer
+    </li>
+  </ul>
+
+  <SectionHeading title="Case Design" id="case-design" icon="cube" />
+  <p>
+    The controller's case was designed using 3D modeling software and 3D printed
+    in multiple parts for easy assembly and maintenance. The case design
+    features:
+  </p>
+  <ul>
+    <li>Integrated cable management for a clean setup</li>
+    <li>Modular design for easy access to internal components</li>
+    <li>Customizable faceplate for different control layouts</li>
+  </ul>
+
+  <SectionHeading
+    title="Performance testing"
+    id="performance-testing"
+    icon="tachometer-alt"
+  />
+  <p>
+    The controller underwent extensive performance testing to ensure reliable
+    operation in live DJ environments. The testing included:dusty environments,
+    a long period of continuous use, and exposure to high humidity levels.
+    Disassembly and reassembly for maintenance and repairs were also tested.
+  </p>
+
+  <SectionHeading
+    id="real-world-application"
+    ,
+    title="Real-World Application"
+    ,
+    icon="music"
+  />
+  <p>
+    The controller has been used in multiple live DJ performances and has
+    received positive feedback from professional DJs. The customizable layout
+    and responsive controls have made it a valuable tool for live mixing and
+    performance.
+  </p>
+
+  <!-- blog foot -->
+  <div class="mt-8 flex flex-wrap gap-4">
+    <a
+      href="/projects"
+      class="bg-accent hover:bg-accent/90 text-white px-6 py-3 rounded-md transition-colors font-medium"
+    >
+      View Other Projects
+    </a>
+    <a
+      href="/contact"
+      class="bg-gray-100 hover:bg-gray-200 text-gray-800 px-6 py-3 rounded-md transition-colors font-medium"
+    >
+      Contact Me
+    </a>
+  </div>
+</BlogLayout>
