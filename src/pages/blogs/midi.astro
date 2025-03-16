@@ -3,6 +3,15 @@ import BlogLayout from "../../layouts/BlogLayout.astro";
 import BlogImage from "../../components/BlogImage.astro";
 import SectionHeading from "../../components/SectionHeading.astro";
 
+// Function to get the correct image path
+function getImagePath(imagePath: string) {
+  // Remove "/public" from the path if it exists
+  const cleanPath = imagePath.replace("/public", "").replace("./public", "");
+
+  // Ensure the path starts with a slash
+  return cleanPath.startsWith("/") ? cleanPath : `/${cleanPath}`;
+}
+
 // Define your sections for the navigation with icons
 const sections = [
   { id: "hardware-design", title: "Hardware Design", icon: "microchip" },
@@ -30,7 +39,7 @@ const sections = [
   date="October 2022 - February 2023"
   description="A custom-built DJ controller using Arduino and multiplexers for professional DJ performances"
   mainImage={{
-    src: "/public/images/midi_dj.jpg",
+    src: getImagePath("/public/images/midi_dj.jpg"),
     alt: "Custom MIDI/DJ controller hardware",
     caption: "The completed custom MIDI/DJ controller in action",
   }}
@@ -57,7 +66,7 @@ const sections = [
   </ul>
 
   <BlogImage
-    src="/public/images/midi_controller_internals.jpg"
+    src={getImagePath("/public/images/midi_controller_internals.jpg")}
     alt="Internal wiring and components of the MIDI controller"
     caption="The internal wiring and component layout of the controller"
     align="wide"
@@ -108,9 +117,7 @@ const sections = [
 
   <SectionHeading
     id="real-world-application"
-    ,
     title="Real-World Application"
-    ,
     icon="music"
   />
   <p>
@@ -136,3 +143,15 @@ const sections = [
     </a>
   </div>
 </BlogLayout>
+
+<script>
+  // This script will run on the client side to preload images
+  document.addEventListener("DOMContentLoaded", () => {
+    const images = document.querySelectorAll("img");
+    images.forEach((img) => {
+      // Create a new Image object to preload
+      const preloadImg = new Image();
+      preloadImg.src = img.src;
+    });
+  });
+</script>
