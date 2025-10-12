@@ -1,9 +1,18 @@
 {
   "projects": [
     {
+      "title": "Mobile version of gas sensing",
+      "description": "Design and development of sensor nodes for data acquisition using RP2350 and MQTT protocol. ML approach to detect gas using multiple nodes through an Android application.",
+      "technology": ["Raspberry Pi Pico 2W (RP2350)", "Op-amps", "PCB Design", "MQTT" ],
+      "date": "Jun 2025 - Present",
+      "link": "/blogs/knownsense",
+      "image": "/images/Knownsense.jpg",
+      "organization": "IISER TVM"
+    },
+    {
       "title": "Electrospinner for Nanofiber Production",
       "description": "Developing a low-cost automatic electrospinning setup for the production of nanofibers. The setup will be used to produce nanofibers from a variety of polymers.",
-      "technology": ["Microcontroller", "High Voltage", "3d Design", "Laser cutting"],
+      "technology": ["Atmega328p", "High Voltage", "3d Design", "Laser cutting"],
       "date": "Nov 2024 - Mar 2025",
       "link": "/blogs/electrospinner",
       "image": "/images/Electrospinner.jpg",
