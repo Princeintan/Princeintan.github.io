@@ -14,6 +14,11 @@ function getImagePath(imagePath: string) {
 
 // Define your sections for the navigation with icons
 const sections = [
+  {
+    id: "what-is-Elecrospinner",
+    title: "What is Electrospinner?",
+    icon: "info",
+  },
   { id: "hardware-design", title: "Hardware Design", icon: "microchip" },
   {
     id: "technical-implementation",
@@ -31,55 +36,237 @@ const sections = [
     title: "Real-World Application",
     icon: "music",
   },
+  {
+    id: "learnings",
+    title: "Learnings",
+    icon: "lightbulb",
+  },
+  {
+    id: "conclusion",
+    title: "Conclusion",
+    icon: "check-circle",
+  },
 ];
 ---
 
 <BlogLayout
   title="Electrospinner for Nanofiber Fabrication"
-  date="Nov 2024 ..."
+  date="Nov 2024 - Mar 2025"
   description="electrospinning setup for even coating of nanofiber"
   mainImage={{
     src: getImagePath("/public/images/Electrospinner.jpg"),
     alt: "Custom electrospinner setup",
-    caption: "The completed custom electrospinner in action",
+    caption: "Custom-built electrospinner while designing.",
   }}
   sections={sections}
   accentColor="#6366f1"
 >
   <p>
-    This project involved designing and building a fully functional
-    electrospinner from scratch using an Arduino Nano as the brain. The
-    controller was specifically designed to control the speed of the motor and
-    the voltage applied to the needle.
+    First time I get to know about Electrospinning at IIT Delhi when my project
+    guide asked me to develop a cost-effective setup to collect the nanofibers
+    using high potential difference between the source and the collector.
   </p>
+  <br />
+  <p>
+    The idea that you can take a liquid polymer solution, apply a high voltage,
+    and create fibers thinner than a human hair, sometimes just a few hundred
+    nanometers across, feels like a mix of physics, chemistry, and a bit of
+    magic. While commercial electrospinning machines exist, they are often
+    expensive and limited in flexibility. So, It was a challenge to build one
+    from scratch, one that not only works reliably but can also be tuned,
+    modified, and understood from the ground up.
+  </p>
+  <br />
+  <p>
+    This project resulted in a fully functional electrospinner, controlled by an
+    Arduino Nano, capable of depositing uniform nanofiber mats on a rotating
+    drum collector. The syringe pump moves back and forth automatically to
+    ensure even fiber distribution, and the whole setup is enclosed in a sturdy
+    aluminum frame with a neatly designed control panel.
+  </p>
+
+  <div class="my-8 text-center">
+    <div class="aspect-video rounded-2xl overflow-hidden shadow-lg">
+      <video
+        src="/videos/electrospinner-demo.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+        class="w-full h-full object-cover"
+      >
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- Caption / Description -->
+    <p class="text-sm text-gray-500 mt-3">
+      Electrospinner in action depositing nanofibers on the rotating drum.
+    </p>
+  </div>
+
+  <p>
+    here is how through how I built it, from the science behind electrospinning
+    to hardware design, technical implementation, and final testing.
+  </p>
+  <SectionHeading
+    title="What is Electrospinner?"
+    id="what-is-Elecrospinner"
+    icon="info"
+  />
+  <p>
+    At its core, electrospinning is a fiber fabrication technique that uses
+    electrostatic forces to draw charged threads of polymer fibers.
+  </p>
+  <br />
+  <p>
+    You start with a syringe filled with polymer solution and apply a high
+    voltage between the needle tip and a grounded collector plate or drum.
+  </p>
+  <br />
+  <p>
+    When the voltage is high enough, the electrostatic repulsion overcomes the
+    surface tension of the liquid droplet at the needle tip. The droplet
+    elongates into what_s called a Taylor cone, and a fine jet of polymer shoots
+    out.
+  </p>
+  <br />
+  <p>
+    As the jet travels through the air, the solvent evaporates, leaving behind a
+    solid nanofiber, which gets deposited on the collector.
+  </p>
+  <br />
+  <p>
+    By controlling the voltage, flow rate, and collector geometry, you can
+    influence the fiber diameter, orientation, and morphology.
+  </p>
+
+  <br />
+  <p>
+    For this project, I wanted a rotating drum collector, which aligns the
+    fibers as they are collected, which is useful for creating thin, uniform
+    nanofiber.
+  </p>
+  <br />
+  <p>
+    To achieve even deposition along the drum_s length, I also made the syringe
+    move back and forth automatically, synchronized with the spinning drum.
+  </p>
+
+  <br />
+  <p></p>
 
   <SectionHeading
     title="Hardware Design"
     id="hardware-design"
     icon="microchip"
   />
-  <p>The controller features an extensive input array that includes:</p>
-  <ul>
-    <li>32 analog inputs (faders, potentiometers, and rotary encoders)</li>
-    <li>16 digital inputs (buttons and switches)</li>
-    <li>RGB LED feedback indicators for various controller states</li>
-  </ul>
-  <div class="my-8 aspect-video rounded-2xl overflow-hidden shadow-lg">
-    <video
-      src="/videos/electrospinner-demo.mp4"
-      autoplay
-      muted
-      loop
-      playsinline
-      class="w-full h-full object-cover"></video>
+  <p>
+    The heart of the system is an Arduino Nano, chosen for its simplicity and
+    flexibility. It’s small, reliable, and easy to program for integrating
+    sensors, displays, and motor drivers.
+  </p>
+  <br />
+  <p>Main Components</p>
+  <br />
+  <p>The setup consists of three main mechanical subsystems:</p>
+  <div class="my-8 text-center">
+    <img
+      src={getImagePath("/public/images/electrospinner/1.png")}
+      alt="Controller for High voltage and stepper motors"
+      class="rounded-2xl shadow-lg mx-auto w-full max-w-3xl"
+    />
+    <p class="text-sm text-gray-500 mt-2">
+      Controller for High voltage and stepper motors
+    </p>
   </div>
+  <p>Rotating Drum Collector</p>
+  <br />
+  <p>
+    The collector drum is driven by a NEMA17 stepper motor. The rotation speed
+    directly affects how the fibers align and how thickly they accumulate. Using
+    pulse-width modulation (PWM), I can precisely control the drum speed from
+    about 50 to 200 RPM. The drum is mounted on bearings for smooth rotation,
+    and is grounded to serve as the fiber collector.
+  </p>
+  <br />
+  <p>Syringe Pump Motion System</p>
+  <br />
+  <p>
+    The syringe is mounted on a small platform connected to a stepper motor and
+    a lead screw. The stepper provides controlled linear motion which moves the
+    syringe pump back and forth across the drum_s width.
+  </p>
+  <br />
+  <p>
+    This ensures the fibers are deposited uniformly rather than piling up in one
+    spot. The direction automatically reverses when the syringe reaches the end
+    of travel, creating a continuous sweeping motion.
+  </p>
+  <br />
+  <p>Structural Frame</p>
+  <br />
+  <p>
+    The structure is built using 20*20 mm aluminum extrusions, which are
+    lightweight, strong, and modular. They provide excellent rigidity while
+    allowing me to easily adjust or add components later.
+  </p>
+  <br />
+  <p>
+    The extrusions also form the base for the electronics enclosure and support
+    the high-voltage components. For the rest of the structure acrylic sheets
+    with a good 8mm thickness was a best choice while working with a high
+    voltage setup to keep the user alive for another day.
+  </p>
+  <div class="my-8 text-center">
+    <img
+      src={getImagePath("/public/images/electrospinner/2.png")}
+      alt=" The voltage source and TMC stepper drivers for low naise operation"
+      class="rounded-2xl shadow-lg mx-auto w-full max-w-3xl"
+    />
+    <p class="text-sm text-gray-500 mt-2">
+      The voltage source and TMC stepper drivers for low naise operation
+    </p>
+  </div>
+  <p>High Voltage Source and Controller</p>
+  <br />
+  <p>
+    Our lab had one unused high voltage source (SMPS) with voltage and current
+    controller, that can go up to 30KV.
+  </p>
+  <br />
+  <p>
+    So, I was just lucky enough to get it, or I would have to make my own. With
+    that plus point I started designing the front panel that consist of two
+    multiturn bourns potentiometer for voltage and current control with a
+    display for each voltage and current.
+  </p>
+  <br />
+  <p></p>
 
-  <BlogImage
-    src={getImagePath("/public/images/midi_controller_internals.jpg")}
-    alt="Internal wiring and components of the MIDI controller"
-    caption="The internal wiring and component layout of the controller"
-    align="wide"
-  />
+  <div class="my-8 text-center">
+    <img
+      src={getImagePath("/public/images/electrospinner/3.png")}
+      alt="piutting together the electronics assembly"
+      class="rounded-2xl shadow-lg mx-auto w-full max-w-3xl"
+    />
+    <p class="text-sm text-gray-500 mt-2">
+      putting together the electronics assembly
+    </p>
+  </div>
+  <p></p>
+  <br />
+  <p>
+    Our lab had one unused high voltage source (SMPS) with voltage and current
+    controller, that can go up to 30KV. So, I was just lucky enough to get it,
+    or I would have to make my own.
+  </p><br />
+
+  <p>
+    With that plus point I started designing the front panel that consist of two
+    multiturn bourns potentiometer for voltage and current control with a
+    display for each voltage and current.
+  </p><br />
 
   <SectionHeading
     title="Technical Implementation"
@@ -87,90 +274,295 @@ const sections = [
     icon="code"
   />
   <p>
-    To handle the large number of inputs with the limited I/O pins available on
-    the Arduino Nano, I implemented:
+    This is where the project really came alive after integrating all the
+    electronics, motion control, and user interface.
   </p>
-  <ul>
-    <li>Efficient interrupt-based polling system for responsive controls</li>
-    <li>
-      Virtual serial port to MIDI converter for communication with the host
-      computer
-    </li>
-  </ul>
+  <p>Controller and Power System</p>
+  <br />
+  <p>
+    The Arduino Nano acts as the central brain of the electrospinner. It reads
+    inputs, controls motor speeds, and manages safety limits.
+  </p>
   <div class="my-8 text-center">
     <img
-      src={getImagePath(
-        "/public/images/electrospinner/electrospinner_electronics_layout1.jpg"
-      )}
-      alt="Electrospinner setup close-up"
+      src={getImagePath("/public/images/electrospinner/4.png")}
+      alt="Linear motion system for syringe pump, knob and I2C display"
       class="rounded-2xl shadow-lg mx-auto w-full max-w-3xl"
     />
     <p class="text-sm text-gray-500 mt-2">
-      Electrospinner electronics assembly
+      Linear motion system for syringe pump, knob and I2C display
     </p>
   </div>
-
-  <SectionHeading title="Case Design" id="case-design" icon="cube" />
   <p>
-    The controller's case was designed using 3D modeling software and 3D printed
-    in multiple parts for easy assembly and maintenance. The case design
-    features:
+    Drum Motor Control: The drum s stepper motor is driven through TMC2208
+    driver module,
   </p>
-  <ul>
-    <li>Integrated cable management for a clean setup</li>
-    <li>Modular design for easy access to internal components</li>
-    <li>Customizable faceplate for different control layouts</li>
-  </ul>
-
-  <SectionHeading
-    title="Performance testing"
-    id="performance-testing"
-    icon="tachometer-alt"
-  />
   <p>
-    The controller underwent extensive performance testing to ensure reliable
-    operation in live DJ environments. The testing included:dusty environments,
-    a long period of continuous use, and exposure to high humidity levels.
-    Disassembly and reassembly for maintenance and repairs were also tested.
-  </p>
-
-  <SectionHeading
-    id="real-world-application"
-    title="Real-World Application"
-    icon="music"
-  />
+    (take away: when you use the generic A4988 driver it makes your stepper cry
+    like hell!) allowing speed and direction control. PWM signals from the
+    Arduino control the speed precisely.
+  </p><br />
   <p>
-    The controller has been used in multiple live DJ performances and has
-    received positive feedback from professional DJs. The customizable layout
-    and responsive controls have made it a valuable tool for live mixing and
-    performance.
+    The syringe motion was also handled by same TMC2208 stepper driver, which
+    receives pulse and direction signals from the Arduino. I implemented
+    acceleration ramps to prevent sudden jerks that might disturb fiber
+    formation. And yes, you can set those jerks if you want. Just use the rotary
+    knob for fun.
   </p>
-
-  <!-- blog foot -->
-  <div class="mt-8 flex flex-wrap gap-4">
-    <a
-      href="/projects"
-      class="bg-accent hover:bg-accent/90 text-white px-6 py-3 rounded-md transition-colors font-medium"
-    >
-      View Other Projects
-    </a>
-    <a
-      href="/contact"
-      class="bg-gray-100 hover:bg-gray-200 text-gray-800 px-6 py-3 rounded-md transition-colors font-medium"
-    >
-      Contact Me
-    </a>
+  <br />
+  <p>
+    High Voltage Supply: A commercial high-voltage module capable of generating
+    up to 30 kV DC powers the electrospinning needle.
+  </p>
+  <br />
+  <p>
+    The Arduino does not directly handle such voltages, of course its just a new
+    born infant XD, instead a separate controller for the HV SMPS was already
+    there with voltmeter and current meter that I just extended, allowing me to
+    set the output voltage safely from the control panel.
+  </p>
+  <div class="my-8 text-center">
+    <img
+      src={getImagePath("/public/images/electrospinner/5.png")}
+      alt="Adjustable drum height for different syringe sizes"
+      class="rounded-2xl shadow-lg mx-auto w-full max-w-3xl"
+    />
+    <p class="text-sm text-gray-500 mt-2">
+      Adjustable drum height for different syringe sizes
+    </p>
   </div>
-</BlogLayout>
+  <p>
+    Control Interface
+    <p>
+      A rotary encoder with a push-button serve as the main user input. Turning
+      the knob adjusts parameters like drum speed or voltage; while pressing it
+      confirms selections indicating e on the screen which refers to editing
+      mode.
+    </p>
+    <br />
+    <p>
+      An LCD display shows live parameters like drum RPM, and syringe travel
+      status.
+    </p>
+    <br />
+    <p>
+      the system does not remember the last configuration so when you lose the
+      power you will have to start again, but I will fix that later.
+    </p>
+    <br />
 
-<script>
-  // This script will run on the client side to preload images
-  document.addEventListener("DOMContentLoaded", () => {
-    const images = document.querySelectorAll("img");
-    images.forEach((img) => {
-      // Create a new Image object to preload
-      const preloadImg = new Image();
-      preloadImg.src = img.src;
+    <div class="my-8 text-center">
+      <img
+        src={getImagePath("/public/images/electrospinner/7.png")}
+        alt="External case design of electrospinner"
+        class="rounded-2xl shadow-lg mx-auto w-full max-w-3xl"
+      />
+      <p class="text-sm text-gray-500 mt-2">
+        External case design of electrospinner electronics
+      </p>
+    </div>
+    <p>
+      All of this runs on a neatly organized non-blocking main loop that
+      constantly updates motor speeds and listens for user input with this a
+      good mix of real-time control and usability was achieved.
+    </p>
+    <br />
+
+    <SectionHeading title="Case Design & Safety" id="case-design" icon="cube" />
+    <p>
+      Working with high voltage always demands extra caution. For this reason, I
+      devoted a lot of attention to enclosure design and safety mechanisms. The
+      electronics are enclosed in a well-ventilated acrylic case, with separate
+      partition for Low-voltage control electronics (Arduino, drivers, and
+      display) and High-voltage section (HV supply and needle terminal).
+    </p>
+    <br />
+    <p>
+      All HV connections are shielded and proper grounding is given. The
+      collector drum itself is connected to earth ground, ensuring charge
+      dissipation during operation.
+    </p>
+    <div class="my-8 text-center">
+      <img
+        src={getImagePath("/public/images/electrospinner/6.png")}
+        alt="Ready to test some fibers"
+        class="rounded-2xl shadow-lg mx-auto w-full max-w-3xl"
+      />
+      <p class="text-sm text-gray-500 mt-2">Ready to test some fibers</p>
+    </div>
+
+    <p>
+      A main power switch with fuse protection , and clear status indicators for
+      HV ON/OFF and system operation.
+    </p>
+    <br />
+    <p>
+      In future a small cooling fan inside the enclosure can be fitted to
+      prevent heat buildup when running for long periods.
+    </p>
+    <br />
+    <p>
+      From a design standpoint, the ventilated case not only improved safety but
+      also gave the whole setup a professional, lab-grade appearance. The
+      modular aluminum frame made it easy to mount the syringe assembly,
+      collector drum, and control box in alignment, with cable management
+      channels for a clean look.
+    </p>
+    <SectionHeading
+      title="Performance testing"
+      id="performance-testing"
+      icon="tachometer-alt"
+    />
+    <p>
+      Once everything was assembled, I spent several sessions fine-tuning the
+      control parameters and verifying performance.
+    </p>
+    <br />
+    <p>
+      The collector drum speed was tested in range from slow rotations around 30
+      RPM for random fiber mats to higher speeds up to 200 RPM for more aligned
+      fibers. The syringe pump platform moved smoothly across its travel path,
+      ensuring even deposition of fibers over the drum surface.
+    </p>
+    <br />
+    <p>
+      The high voltage was gradually ramped from 10 kV to about 25 kV during
+      operation. At the right settings, a stable jet formed at the needle tip,
+      and thin fibers started collecting beautifully on the drum.
+    </p>
+    <br />
+    <p>
+      I also tested different polymer solutions like Polyacrylonitrile PAN
+      developed by a cool PhD guy Tarun in IIT Delhi to observe the fiber
+      morphology under varying conditions. Even with basic parameters, the
+      results were consistent smooth, bead-free fibers when the voltage,
+      distance, and flow rate were balanced. For long run we kept it nearby an
+      open window.
+    </p>
+    <br />
+    <div class="my-8 text-center">
+      <img
+        src={getImagePath("/public/images/electrospinner/8.png")}
+        alt="cheese time for electrospinner"
+        class="rounded-2xl shadow-lg mx-auto w-full max-w-3xl"
+      />
+      <p class="text-sm text-gray-500 mt-2">cheese time for electrospinner</p>
+    </div>
+    <p>
+      For more precise evaluation, the collected mats were examined under an
+      optical microscope. The fibers appeared continuous and uniform, confirming
+      that the system was performing as expected.
+    </p>
+
+    <SectionHeading
+      id="real-world-application"
+      title="Real-World Application"
+      icon="music"
+    />
+    <p>
+      Nanofibers have a wide range of applications, from air and water
+      filtration membranes to tissue engineering scaffolds, sensors, and even
+      energy storage materials.
+    </p>
+    <br />
+    <p>
+      By building this electrospinner, a research-ready platform for exploring
+      new materials and optimizing spinning parameters is ready to use for
+      anyone in my lab.
+    </p>
+    <p>Because everything is modular and open-source, I can easily:</p>
+    <br />
+    <p>
+      Add temperature and humidity control for environment-sensitive polymers,
+      integrate a flow sensor to monitor syringe output, Implement multi-needle
+      setups for higher throughput, Or even automate the entire process via
+      computer control using serial commands.
+    </p>
+    <br />
+    <p>
+      Another exciting direction is to interface the Arduino with a Bluetooth or
+      Wi-Fi module, allowing remote monitoring and control of parameters from a
+      phone or computer.
+    </p>
+    <br />
+    <p>
+      The flexibility of this in house-built setup means it can evolve with each
+      experiment, rather than being fixed like commercial machines.
+    </p>
+    <SectionHeading id="learnings" title="Learnings" icon="lightbulb" />
+    <p>
+      Building this electrospinner was a deeply rewarding project. It combined
+      my interests in electronics, mechanical design, and materials science, and
+      gave me a practical understanding of how multidisciplinary systems come
+      together.
+    </p>
+    <br />
+    <p>Some key takeaways:</p>
+    <br />
+    <p>
+      Safety design is as important as performance. Handling 30 kV requires
+      respect and planning. Motion synchronization between the syringe and drum
+      made a huge difference in uniform fiber collection.
+    </p>
+    <br />
+    <p>
+      Using Arduino simplified the development process enormously, and the
+      open-source ecosystem meant anyone could experiment freely.
+    </p>
+    <br />
+    <p>
+      Designing the enclosure and front panel gave me a better appreciation for
+      industrial design and usability.
+    </p>
+    <br />
+    <p>
+      Seeing the first layer of nanofibers collect evenly on the drum was one of
+      those moments that make all the troubleshooting worth it. The combination
+      of careful design and hands-on testing paid off beautifully.
+    </p>
+
+    <SectionHeading id="conclusion" title="Conclusion" icon="check-circle" />
+    <p>
+      From a concept on paper to a fully functioning laboratory device, this
+      project demonstrates what can be achieved with resourcefulness, curiosity,
+      and a bit of engineering creativity. The electrospinner I built is not
+      just a prototype it is a robust platform for experimenting with nanofiber
+      fabrication, adaptable for future research and applications.
+    </p>
+    <br />
+    <p>
+      What excites me most is that this setup can inspire other students,
+      makers, and researchers to build their own systems understanding every
+      wire, and line of code that makes it work. Because in the end, building
+      something from scratch does not just create a tool it creates knowledge.
+    </p>
+
+    <!-- blog foot -->
+    <div class="mt-8 flex flex-wrap gap-4">
+      <a
+        href="/projects"
+        class="bg-accent hover:bg-accent/90 text-white px-6 py-3 rounded-md transition-colors font-medium"
+      >
+        View Other Projects
+      </a>
+      <a
+        href="/contact"
+        class="bg-gray-100 hover:bg-gray-200 text-gray-800 px-6 py-3 rounded-md transition-colors font-medium"
+      >
+        Contact Me
+      </a>
+    </div>
+  </p>
+
+  <script>
+    // This script will run on the client side to preload images
+    document.addEventListener("DOMContentLoaded", () => {
+      const images = document.querySelectorAll("img");
+      images.forEach((img) => {
+        // Create a new Image object to preload
+        const preloadImg = new Image();
+        preloadImg.src = img.src;
+      });
     });
-  });
-</script>
+  </script>
+</BlogLayout>
