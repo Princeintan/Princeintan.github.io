@@ -2,6 +2,7 @@
 import BlogLayout from "../../layouts/BlogLayout.astro";
 import BlogImage from "../../components/BlogImage.astro";
 import SectionHeading from "../../components/SectionHeading.astro";
+import GalleryClient from "../../components/GalleryClient.jsx";
 
 // Function to get the correct image path
 function getImagePath(imagePath: string) {
@@ -12,6 +13,34 @@ function getImagePath(imagePath: string) {
   return cleanPath.startsWith("/") ? cleanPath : `/${cleanPath}`;
 }
 
+// Images for the first gallery
+const gallery1Images = [
+  { src: "/images/ps6/1.png", alt: "Front panel view" },
+  { src: "/images/ps6/2.png", alt: "Back panel connections" },
+  { src: "/images/ps6/3.png", alt: "Internal circuitry" },
+
+  { src: "/images/ps6/4.png", alt: "Front panel view" },
+  { src: "/images/ps6/5.png", alt: "Back panel connections" },
+];
+
+// Images for the second gallery
+const gallery2Images = [
+  { src: "/images/ps6/11.png", alt: "Miss Cute Green" },
+  { src: "/images/ps6/7.png", alt: "Experiment setup" },
+  { src: "/images/ps6/8.png", alt: "Controller board" },
+  { src: "/images/ps6/9.png", alt: "Wiring diagram" },
+
+  { src: "/images/ps6/10.png", alt: "Front panel view" },
+];
+
+const gallery3Images = [
+  { src: "/images/ps6/12.png", alt: "Experiment setup" },
+  { src: "/images/ps6/13.png", alt: "Controller board" },
+  { src: "/images/ps6/14.png", alt: "Wiring diagram" },
+
+  { src: "/images/ps6/15.png", alt: "Front panel view" },
+  { src: "/images/ps6/16.png", alt: "Miss Cute Green" },
+];
 // Define your sections for the navigation with icons
 const sections = [
   { id: "hardware-design", title: "Hardware Design", icon: "microchip" },
@@ -74,12 +103,16 @@ const sections = [
     <li>Fully automated control with software</li>
   </ul>
 
-  <BlogImage
-    src={getImagePath("/public/images/internals.jpg")}
-    alt="Internal wiring and components of the MIDI controller"
-    caption="The internal wiring and component layout of the controller"
-    align="wide"
-  />
+  <div class="my-8 text-center">
+    <img
+      src={getImagePath("/public/images/ps6/37.png")}
+      alt="digital heater power supply with six channel output"
+      class="rounded-2xl shadow-lg mx-auto w-full max-w-3xl"
+    />
+    <p class="text-sm text-gray-500 mt-2">
+      digital heater power supply with six channel output
+    </p>
+  </div>
 
   <SectionHeading
     title="Technical Implementation"
@@ -90,6 +123,9 @@ const sections = [
     To handle the large number of inputs with the limited I/O pins available on
     the Arduino Nano, I implemented:
   </p>
+
+  <GalleryClient client:load images={gallery1Images} featuredIndex={0} />
+  <h3>Gallery 1: PS6 Images</h3>
   <ul>
     <li>Efficient interrupt-based polling system for responsive controls</li>
     <li>
@@ -104,6 +140,8 @@ const sections = [
     in multiple parts for easy assembly and maintenance. The case design
     features:
   </p>
+  <h3>Gallery 2: PS6 Images</h3>
+  <GalleryClient client:load images={gallery2Images} featuredIndex={0} />
   <ul>
     <li>Integrated cable management for a clean setup</li>
     <li>Modular design for easy access to internal components</li>
@@ -121,6 +159,9 @@ const sections = [
     a long period of continuous use, and exposure to high humidity levels.
     Disassembly and reassembly for maintenance and repairs were also tested.
   </p>
+
+  <h3>Gallery 2: PS6 Images</h3>
+  <GalleryClient client:load images={gallery3Images} featuredIndex={1} />
 
   <SectionHeading
     id="real-world-application"
