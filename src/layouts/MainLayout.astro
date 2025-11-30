@@ -7,11 +7,15 @@ import svgicon from "../../public/prashant.svg";
 interface Props {
   title: string;
   description?: string;
+  image?: string; // OG image
+  url?: string;
 }
 
 const {
   title,
   description = "Prashant Sharma's Portfolio - Mathematics, Programming, and Engineering",
+  image = "/images/profile.jpg", // put your OG image here
+  url = "https://<YOUR_DOMAIN>",
 } = Astro.props;
 ---
 
@@ -19,16 +23,47 @@ const {
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href={svgicon.src} />
-    <meta name="description" content={description} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Title + Description -->
     <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Canonical -->
+    <link rel="canonical" href={url} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:url" content={url} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+
+    <!-- Robots -->
+    <meta name="robots" content="index, follow" />
+
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/favicon.ico" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Prashant Sharma",
+        "jobTitle": "Research Assistant",
+        "affiliation": "IISER Thiruvananthapuram",
+        "url": "https://princeintan.github.io/",
+        "image": "https://princeintan.github.io/images/profile.jpg",
+        "sameAs": ["https://orcid.org/0009-0006-1018-3666"],
+        "description": "Mathematics graduate working on scientific instrumentation, electronics and software."
+      }
+    </script>
   </head>
   <body class="bg-gray-50 text-gray-900 font-sans">
     <div class="min-h-screen flex flex-col">

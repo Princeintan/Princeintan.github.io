@@ -7,7 +7,7 @@ import svgicon from "../../public/prashant.svg";
 
 interface Props {
   title: string;
-  date: string; // expected in YYYY-MM-DD or any parseable string
+  date: string;
   description?: string;
   mainImage?: {
     src: string;
@@ -20,10 +20,6 @@ interface Props {
     icon?: string;
   }[];
   accentColor?: string;
-  // optional: allow passing the canonical/permalink for the post
-  url?: string;
-  // optional: twitter handle for author (for twitter:site)
-  twitterHandle?: string;
 }
 
 const {
@@ -32,75 +28,8 @@ const {
   description = "Prashant Sharma's Blog - Mathematics, Programming, and Engineering",
   mainImage,
   sections = [],
-  accentColor = "#3b82f6",
-  url: passedUrl,
-  twitterHandle,
+  accentColor = "#3b82f6", // Default blue color
 } = Astro.props;
-
-// Site base URL: prefer Astro.site, then fallback to passedUrl root if provided, otherwise empty
-const siteBase = Astro.site ?? (passedUrl ? new URL(passedUrl).origin : "");
-// Compute canonical URL for this article:
-// 1) If the author passed an absolute url prop, use it.
-// 2) Else attempt to derive from Astro.request.url + Astro.site (Astro.request available server-side)
-let canonical =
-  passedUrl ||
-  (siteBase && Astro.request?.url
-    ? siteBase + new URL(Astro.request.url).pathname
-    : Astro.request?.url || siteBase || "");
-
-
-// Normalize mainImage absolute URL for social tags
-let ogImage = "";
-if (mainImage && mainImage.src) {
-  try {
-    const u = new URL(mainImage.src, siteBase || undefined);
-    ogImage = u.href;
-  } catch (e) {
-    ogImage = mainImage.src;
-  }
-} else {
-  // fallback to profile svg or generic image in public
-  ogImage = siteBase ? `${siteBase}/images/profile.jpg` : "/images/profile.jpg";
-}
-
-// ISO date for JSON-LD and article meta
-let isoDate = "";
-try {
-  isoDate = new Date(date).toISOString();
-} catch (e) {
-  isoDate = new Date().toISOString();
-}
-
-// Author info (you). Update if you want different author data.
-const author = {
-  "@type": "Person",
-  "name": "Prashant Sharma",
-  "url": siteBase || "",
-  "sameAs": ["https://orcid.org/0009-0006-1018-3666"]
-};
-
-// JSON-LD structured data for the blog post
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": title,
-  "description": description,
-  "image": [ogImage],
-  "author": author,
-  "publisher": {
-    "@type": "Organization",
-    "name": "Prashant Sharma",
-    "logo": {
-      "@type": "ImageObject",
-      "url": siteBase ? `${siteBase}/prashant.svg` : "/prashant.svg"
-    }
-  },
-  "datePublished": isoDate,
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": canonical || siteBase || ""
-  }
-};
 ---
 
 <!doctype html>
@@ -108,51 +37,20 @@ const jsonLd = {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- Basic SEO -->
-    <title>{title} | Blog</title>
-    <meta name="description" content={description} />
-    <link rel="canonical" href={canonical} />
     <link rel="icon" type="image/x-icon" href={svgicon.src} />
-
-    <!-- Article / social meta -->
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={ogImage} />
-    {canonical ? <meta property="og:url" content={canonical} /> : null}
-
-    <!-- Article-specific OG tags -->
-    <meta property="article:published_time" content={isoDate} />
-    <meta property="article:author" content="Prashant Sharma" />
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content={ogImage ? "summary_large_image" : "summary"} />
-    {twitterHandle ? <meta name="twitter:site" content={twitterHandle} /> : null}
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={ogImage} />
-
-    <!-- Robots -->
-    <meta name="robots" content="index,follow" />
-
-    <!-- JSON-LD structured data -->
-    <script type="application/ld+json">
-      {JSON.stringify(jsonLd)}
-    </script>
-
-    <!-- Preconnects / fonts / icons -->
+    <meta name="description" content={description} />
+    <title>{title} | Blog</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+    <!-- Font Awesome for icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-
     <style define:vars={{ accentColor }}>
       :root {
         --accent-color: var(--accentColor);
