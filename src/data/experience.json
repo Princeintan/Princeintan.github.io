@@ -1,11 +1,33 @@
 {
     "experiences": [
+       {
+        "title": "Project Scientist-I",
+        "company": "IITM Pune",
+        "location": "Cloud Aerosol Interaction and Precipitation Enhancement Experimentat, India",
+        "startDate": "May 2026",
+        "endDate": "Present",
+        "description": [
+          "Development of mobile Weather station and LiDAR system for the Cloud Aerosol Interaction and Precipitation Enhancement Experimentat (CAIPEEX) project."
+        ],
+        "technologies": ["IoT", "Hardware in loop", "HPC", "Lidar", "Weather Station", "Python", "C++"]
+      },
+      {
+        "title": "Project Assistant",
+        "company": "IISER TVM",
+        "location": "SMART Lab, Thiruvananthapuram, India",
+        "startDate": "Jul 2025",
+        "endDate": "April 2026",
+        "description": [
+          "knownSense: node based IoT gas Sensor for VOC detection and monitoring"
+        ],
+        "technologies": ["RP2350", "C++", "PCB Design", "3D Printing", "PWM", "LCD"]
+      },
       {
         "title": "Research Assistant",
         "company": "IIT Delhi",
         "location": "Department of Material Science and Engineering, India",
         "startDate": "Oct 2024",
-        "endDate": "Present",
+        "endDate": "March 2025",
         "description": [
           "Designing an Instrumental setup for testing Triboelectric Nanogenerator Devices in Vacuum."
         ],
